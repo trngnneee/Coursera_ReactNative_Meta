@@ -1,0 +1,57 @@
+\chapter{Blur the image}
+
+\section{Idea}
+\begin{itemize}
+    \item Blur the image using Box blur.
+    \begin{itemize}[label=$\circ$]
+        \item Box blur \cite{box_blur} blurs an image by replacing each pixel with the average value of the pixels surrounding it in a square region (kernel - k x k matrix). 
+        \item The size of the kernel is determined by the radius r.
+        \item Kernel matrix follows the formula:
+        \[
+        \text{kernel} = \frac{1}{(2 \cdot r + 1)^2}
+        \begin{bmatrix}
+        1 & 1 & \cdots & 1 \\
+        1 & 1 & \cdots & 1 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        1 & 1 & \cdots & 1 \\
+        \end{bmatrix}_{(2r + 1) \times (2r + 1)}
+        \]
+        \item For example: with r = 2, kernel is:
+        \[
+        \frac{1}{25} \begin{bmatrix}
+            1 & 1 & 1 & 1 & 1 \\
+            1 & 1 & 1 & 1 & 1 \\
+            1 & 1 & 1 & 1 & 1 \\
+            1 & 1 & 1 & 1 & 1 \\
+            1 & 1 & 1 & 1 & 1
+        \end{bmatrix}
+        \]
+    \end{itemize}
+\end{itemize}
+
+\section{Processing}
+\begin{enumerate}
+    \item Convert image to \texttt{float32} to avoid overflow during the process.
+    \item Check for removing the Alpha channel, keep only 3 RGB channels.
+    \item Input a 2D image and the radius of kernel (optional, r = 2 by default).
+    \item Initialize a \( (2 \cdot r + 1) \times (2 \cdot r + 1) \) kernel matrix following the above formula.
+    \item Convert the image to grayscale to reduce the necessary calculation during the blur process.
+    \item Pad add pixels at the edge to ensure that when scanning the kernel to the edge, there are still enough values to calculate.
+    \item Traversing for each pixel and calculating the average value of the pixels surrounding it in kernel.
+    \item To ensure valid pixel values, the result is clipped to the range \([0, 255]\). Then convert to \texttt{uit8} for correct display.
+\end{enumerate}
+
+\section{Result}
+\begin{itemize}
+    \item Original image/Blur with r = 2/Blur with r = 3
+    \begin{center}
+        \includegraphics[width=0.3\textwidth]{images/img.png}
+        \includegraphics[width=0.3\textwidth]{images/img_blur.png}
+        \includegraphics[width=0.3\textwidth]{images/img_blur_2.png}
+    \end{center} 
+    \begin{center}
+        \includegraphics[width=0.3\textwidth]{images/img2.jpg}
+        \includegraphics[width=0.3\textwidth]{images/img2_blur_2.jpg}
+        \includegraphics[width=0.3\textwidth]{images/img2_blur.jpg}
+    \end{center} 
+\end{itemize}

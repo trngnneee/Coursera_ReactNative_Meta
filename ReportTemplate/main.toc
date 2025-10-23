@@ -1,0 +1,64 @@
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{TABLE OF CONTENTS}{1}{section*.1}%
+\contentsline {chapter}{LIST OF FIGURES}{4}{section*.3}%
+\contentsline {chapter}{\numberline {1}Course Introduction}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Video: Introduction to the course}{5}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Perspective}{5}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Video: Learning Object}{5}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}What is React Native}{5}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Video: What is React Native?}{5}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Native application}{6}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}Video: Native, cross-platform \& hybrid developer roles}{7}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Native development}{7}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Video: Cross-platform Application}{7}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Video: Hybrid app - another category of cross-platform apps}{7}{subsection.1.3.3}%
+\contentsline {section}{\numberline {1.4}Video: Meet a cross-platform Developer}{8}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Dialog: Bridging the Gap: Your React Foundation for Mobile Apps}{9}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Reading: Course Syllabus}{9}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Reading: How to be successful in this course}{10}{section.1.7}%
+\contentsline {section}{\numberline {1.8}Video: React Native with Expo}{10}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}Required materials}{10}{subsection.1.8.1}%
+\contentsline {subsection}{\numberline {1.8.2}Create a sample React Native App}{11}{subsection.1.8.2}%
+\contentsline {chapter}{\numberline {2}Introduction to React Native}{12}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Video: How is React Native used in the real world?}{12}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Video: React Native Code}{13}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Sample code:}{13}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.3}Reading: Benefits of React Native}{14}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Video: What is Expo}{14}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}What is Expo?}{14}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Over the Air (OTA)}{14}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}API for Expo}{15}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Some caution about Expo}{15}{subsection.2.4.4}%
+\contentsline {section}{\numberline {2.5}Reading: Building React Native apps with Expo}{15}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Knowledge check: Introduction to React Native}{16}{section.2.6}%
+\contentsline {chapter}{\numberline {3}React Native Components}{17}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Video: What are React Native Components}{17}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Basic Concept}{17}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Categorization}{17}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Video: Building a components}{18}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Reading: Exploring building a components}{19}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Reading: Exercise: Your first React Native components}{19}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Self review: Your first React Native components}{20}{section.3.5}%
+\contentsline {section}{\numberline {3.6}Knowledge checking: React Native Components}{20}{section.3.6}%
+\contentsline {chapter}{\numberline {4}Views, Text and Scrollable components}{21}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Video: What are View and Text components?}{21}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}View}{21}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Text}{21}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Video: Using the View and Text Components}{21}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Reading: Exercise: Build a React Native Screen}{22}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Self Review: Build a React Native screen}{22}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Video: What is the ScrollView component?}{23}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Problem}{23}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}ScrollView}{23}{subsection.4.5.2}%
+\contentsline {section}{\numberline {4.6}Video: Using the ScrollView component}{23}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Reading: Exercise: Build a scrollable component}{24}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Practice Assignment: Self review: Build a scrollable component}{24}{section.4.8}%
+\contentsline {section}{\numberline {4.9}Practive Assignment: Knowledge check: Views, Text and Scrollable components}{25}{section.4.9}%
+\contentsline {chapter}{\numberline {5}Styling components}{26}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Video: StyleSheet API}{26}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Video: Practical Styling}{27}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Reading: Styling using StyleSheet}{29}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Reading: Exercise: Style a component}{29}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Self review: Style a component}{33}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Video: Module summary: Introduction to React Native}{33}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Module quiz: Introduction to React Native}{35}{section.5.7}%

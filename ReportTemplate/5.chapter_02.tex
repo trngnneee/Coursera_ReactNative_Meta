@@ -1,0 +1,129 @@
+\chapter{Introduction to React Native}
+
+\section{Video: How is React Native used in the real world?}
+\textbf{Financial institution}
+\begin{itemize}
+    \item Adopted React Native to build their consumer mobile app for both iOS and Android.
+    \item Instead of developing a separate iOS version and an Android version in parallel with no way to share code, choosing React Native instead to share code and reduce the delays and repetition.
+\end{itemize}
+
+\textbf{Automatic Updates}
+\begin{itemize}
+    \item Automatically refreshes codes that accelerated the release of new product features.
+    \item This resulted in avoiding delays in getting approval from App Stores for a new version of the app. 
+\end{itemize}
+
+\textbf{Multinational e-commerce platform provider.}
+\begin{itemize}
+    \item Developer who have used React switch to React Native quickly for their mobile apps since it uses React as well.
+    \item The existing code could have potential reuse and the learning curve for moving from react to React Native is relatively low. 
+    \item The shared code between iOS and Android is 95 percent shared.
+\end{itemize}
+
+\textbf{Financial Advisor}
+\begin{itemize}
+    \item Reducing the time to market.
+    \item Their development velocity was very high and they were able to ship the first version of the app on both iOS and Android within five weeks of development. So they need to collaborate between the web and mobile team.
+    \item \textbf{Practive Question:} What are the biggest benefits of using React Native are? Select all that apply.
+    $\rightarrow$ Sharing of ideas and code between web and mobile or React and React Native, Sharing of code base across platforms, The speed of development.
+\end{itemize}
+
+\section{Video: React Native Code}
+\subsection{Sample code:}
+\begin{lstlisting}[language=Java, numbers=none]
+    import { View, Text } from 'react-native';
+
+    export default function WelcomeApp(){
+      return (
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center'
+          }}
+        >
+          <Text>Welcome to React Native</Text>
+        </View>
+      )
+    }
+\end{lstlisting}
+\begin{itemize}
+    \item \textbf{Practive Question:} Which of the following statements are true about React Native Code?
+    $\rightarrow$ React Native code is made up of components and follows component design, React Native code is written in JavaScript and React.
+\end{itemize}
+
+\section{Reading: Benefits of React Native}
+\begin{itemize}
+    \item Uses Javascript.
+    \item Uses React.
+    \item Builds Cross-Platform Native Apps.
+    \item Cost Effective.
+    \item Developer Experience.
+    \begin{itemize}[label=$\circ$]
+        \item Fast Refresh
+        \item Easy Debugging.
+        \item Over-the-Air Updates
+    \end{itemize}
+\end{itemize}
+
+\section{Video: What is Expo}
+\subsection{What is Expo?}
+\begin{itemize}
+    \item Expo is an open-source platform that is used for making cross platform native apps using React Native.
+    \item Expo adds a layer of abstraction on top of React Native apps. 
+    \item It provides tools built for React Native, which gets you set up within a few minutes without much hassle.
+    \item With Expo, however, you will never touch any native IOS or native android code like Swift, Java, or Kotlin because Expo automatically makes native code compatible with React Native code, and it is not available to the developers who are using it.
+\end{itemize}
+
+\subsection{Over the Air (OTA)}
+\begin{itemize}
+    \item Push updates to your app anytime Over The Air not need app store approvals to push updates, reducing time waiting on approval from apps stores to publish updates to their apps.
+\end{itemize}
+
+\subsection{API for Expo}
+\begin{itemize}
+    \item Camera.
+    \item File systems.
+    \item Location services.
+    \item Push notification.
+\end{itemize}
+
+\subsection{Some caution about Expo}
+\begin{itemize}
+    \item Expo does not have all the IOS and Android APIs.
+    \item Expo has support from many device APIs but not all of them. 
+    \item The size of your app is not lean.
+    \item Expo can be ejected from your app later on.
+
+    \item \textbf{Practive Question:} Expo is an open-source platform that adds a layer of abstraction on top of React Native apps.  Which of the following are benefits of this? Check all that apply.
+    \begin{itemize}[label=$\circ$]
+        \item You will only need a recent version of Node.js and an emulator to start building mobile apps in React Native using Expo.
+        \item With Expo, you will be able to start right away with minimal setup and build a complete cross-platform app in React Native. 
+        \item Expo has a feature to do Over The Air (OTA) updates.
+    \end{itemize}
+\end{itemize}
+
+\section{Reading: Building React Native apps with Expo}
+\begin{itemize}
+    \item Build with npm:
+    \begin{lstlisting}[language=Bash, numbers=none]
+        npx create-expo-app FirstProject
+        cd FirstProject
+        npm start
+    \end{lstlisting}
+    \item Instead of using \texttt{npm start}, we can also use \texttt{npx expo start}.
+    \item Build with yarn:
+    \begin{lstlisting}[language=Bash, numbers=none]
+        yarn create expo-app FirstProject
+        cd FirstProject
+        yarn start
+    \end{lstlisting}
+    \item Instead of using \texttt{yarn start}, we can also use \texttt{yarn expo start}.
+\end{itemize}
+
+\section{Knowledge check: Introduction to React Native}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/knowledge-checking-1.pdf}
+    \caption{Knowledge check: Introduction to React Native}
+\end{figure}

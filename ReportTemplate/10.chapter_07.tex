@@ -1,0 +1,50 @@
+\chapter{Sharpen the image}
+
+\section{Idea}
+\begin{itemize}
+    \item Using sharpen kernel to highlights the edges in an image.
+    \item Sharpen kernel \cite{box_blur}:
+    \[
+        \begin{bmatrix}
+            0 & -1 & 0 \\
+            -1 & 5 & -1 \\
+            0 & -1 & 0
+        \end{bmatrix}
+    \]
+    \item Purpose:
+    \begin{itemize}
+        \item Increase center point weight (value 5).
+        \item Decreases the neighborhood weight (value -1).
+        \begin{flushleft}
+            $\Rightarrow$ \text{Highlight details, sharper edges.}
+        \end{flushleft}
+    \end{itemize}
+\end{itemize}
+
+\section{Processing}
+\begin{enumerate}
+    \item Convert image to \texttt{float32} to avoid overflow during the process.
+    \item Check for removing the Alpha channel, keep only 3 RGB channels.
+    \item Define sharpen kernel following the above matrix.
+    \item Convert the image to grayscale to reduce the necessary calculation during the blur process.
+    \item Pad add pixels at the edge to ensure that when scanning the kernel to the edge, there are still enough values to calculate.
+    \item Traversing for each pixel and applying the kernel.
+    \item To ensure valid pixel values, the result is clipped to the range \([0, 255]\). Then convert to \texttt{uit8} for correct display.
+\end{enumerate}
+
+\section{Result}
+\begin{itemize}
+    \item Original image/Image after being sharpened
+    \begin{center}
+        \includegraphics[width=0.3\textwidth]{images/img_gray.png}
+        \includegraphics[width=0.3\textwidth]{images/img_sharpen.png}
+    \end{center} 
+    \begin{center}
+        \includegraphics[width=0.3\textwidth]{images/img2_gray.jpg}
+        \includegraphics[width=0.3\textwidth]{images/img2_sharpen.jpg}
+    \end{center} 
+    \begin{center}
+        \includegraphics[width=0.3\textwidth]{images/img3_gray.jpg}
+        \includegraphics[width=0.3\textwidth]{images/img3_sharpen.jpg}
+    \end{center} 
+\end{itemize}

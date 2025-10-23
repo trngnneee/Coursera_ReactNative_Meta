@@ -1,0 +1,98 @@
+\chapter{React Native Components}
+
+\section{Video: What are React Native Components}
+\subsection{Basic Concept}
+\begin{itemize}
+    \item In React, you use a basic building block to build the UI, namely a component. Components let you split the UI into independent reusable pieces. 
+    \item When you put all of these independent pieces of components together, you build a complete app. 
+    \item The same concept is true for React Native since it is built using React.
+    \item Some reusable React's components:
+    \begin{itemize}[label=$\circ$]
+        \item Headers
+        \item Footers
+        \item Menu bars
+        \item Images
+    \end{itemize}
+\end{itemize}
+
+\subsection{Categorization}
+\begin{itemize}
+    \item Core components
+    \begin{itemize}[label=$\circ$]
+        \item View, Text, Image, TextInput, ScrollView, ...
+        \item They are ready to use.
+        \item They translate into native iOS and native Android components. This means they can adapt to work with your device's native functionality without the need for specialized code. You do not need to concern yourself about how that happens.
+    \end{itemize}
+    \item Community components
+    \begin{itemize}[label=$\circ$]
+        \item React Navigation, React Native Screen, React Native Maps, React Native Videos, ...
+        \item The original package by itself is quite lean. 
+    \end{itemize}
+    \item Your native components
+    \begin{itemize}[label=$\circ$]
+        \item Your native components and you own them.
+        \item Written in native code. Built by developers who are experienced in native mobile development.
+        \item You can make them available as open source for the community.
+    \end{itemize}
+
+    \item \textbf{Practive Question:} Which component type is built into the react-native package and comes ready-to-use?  
+    $\rightarrow$ Core components
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{images/react-native-compo.pdf}
+        \caption{React Native Components}
+    \end{figure}
+\end{itemize}
+
+\section{Video: Building a components}
+\begin{itemize}
+    \item Create a components folder. Add a \texttt{LittleLemonHeader.js} to this folder.
+    \item Implement this header: 
+    \begin{lstlisting}[language=Java, numbers=none]
+        import * as React from 'react'
+        import { Text, View } from 'react-native'
+        
+        export default function LittleLemonHeader(){
+          return (
+            <View>
+              <Text>Littel Lemon Restaurant</Text>
+            </View>
+          )
+        }
+    \end{lstlisting}
+    \item Use it in the \texttt{main.js}.
+
+    \item \textbf{Practive Question:} Custom Components in React are reusable throughout the app. True or false? 
+    $\rightarrow$ True
+\end{itemize}
+
+\section{Reading: Exploring building a components}
+This part is the same way to build a component as the above section.
+
+\section{Reading: Exercise: Your first React Native components}
+\begin{itemize}
+    \item This part is about creating a footer components after the header work.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.2\linewidth]{images/ex1.pdf}
+        \caption{Exercise: Your first React Native components}
+        \label{fig:placeholder}
+    \end{figure}
+\end{itemize}
+
+\section{Self review: Your first React Native components}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/self-review-1.pdf}
+    \caption{Self review: Your first React Native components}
+    \label{fig:placeholder}
+\end{figure}
+
+\section{Knowledge checking: React Native Components}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/knowledge-checking-2.pdf}
+    \caption{Knowledge checking: React Native Components}
+    \label{fig:placeholder}
+\end{figure}
