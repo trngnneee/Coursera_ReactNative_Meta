@@ -1,210 +1,145 @@
-\chapter{Course Introduction}
+\chapter{Render large list with FlatList}
 
-\section{Video: Introduction to the course}
-\subsection{Perspective}
+\section{Video: Rendering large lists using FlatList component}
+\subsection{Why FlatList?}
 \begin{itemize}
-    \item Developing a mobile app for a client - Little Lemon, a restaurant served in a casual environment.
+    \item While ScrollView provides a very useful functionality, it does also introduce the issue of slow rendering times for large lists.
+    \item FlatList is another approach that can enable faster performance.
+    \item Rendreing time with FlatList is not affected by large lists.
+    \item For example, using ScrollView with text and images can take a lot of time waiting for rendering because user have to wait for all these images load before they can experience the app.
 \end{itemize}
 
-\subsection{Video: Learning Object}
+\subsection{FlatList - Lazy rendering}
 \begin{itemize}
-    \item React Native.
-    \item Basic Components.
-    \item Core Components: View, Text, Scroll View.
-    \item FlatList, SectionList, TextInput.
-    \item Pressable, images, hooks.
-    \item Navigating: Stack, Tab, Drawer.
-    \item Graded assessment.
+    \item Instead of rendering the items all at once, FlatList render as the items appear.
+    \item Items are only rendered when they are about to appear on the screen and are removed when the user scrolls away from them.
+    \item Result in faster rendering and superior performance.
+    \item \textbf{Practice Question:} The \texttt{FlatList} component uses lazy rendering of component items. Which of the following are characteristics of lazy rendering? Choose all that apply.
+    $\rightarrow$ Items are rendered as the user encounters them in the app, Rendered items are removed when the user scrolls away from them.
 \end{itemize}
 
-\section{What is React Native}
-
-\subsection{Video: What is React Native?}
+\subsection{Syntax for FlatList}
 \begin{itemize}
-    \item Open-source JS Lib based on React that is used to build cross-platform native mobile apps.
-    \item Created by Meta, used for Facebook app.
-    \item Can be used to build:
-    \begin{itemize}[label=$\circ$]
-        \item iOS
-        \item Android
-        \item Windows
-        \item TV Apps
-    \end{itemize}
-\end{itemize}
-
-\subsection{Native application}
-\begin{itemize}
-    \item \textbf{Native apps:} the app was designed for that specific device and OS.
-    \item Compiling process: Javascript $\rightarrow$ Native code $\rightarrow$ Device processor.
-    \item Contact with cross-platform through API (Application Programming Interfaces).
-    \item Sample code for React Native:
+    \item Basic use: 
     \begin{lstlisting}[language=Java, numbers=none]
-        import { Text, View } from 'react-native';
+        <FlatList 
+            data={items}
+            renderItem={renderItem}
+        />
+    \end{lstlisting}
+    \item Props: 
+    \begin{lstlisting}[language=Java, numbers=none]
+        renderItem({ item, index, separators })
+    \end{lstlisting}
+    \begin{itemize}
+        \item item: single from array.
+        \item index: unique index from the data array.
+        \item separators: optional, highligh or unhighligh items.
+    \end{itemize}
+\end{itemize}
 
-        const WelcomeApp = () => { 
-          return (
-            <View
-              styles={{ 
-                flex: 1, 
-                justifyContent: 'center', 
-                alignItems: 'center' 
-              }}
-            >
-              <Text>Welcome to React Native</Text>
-            </View>
-          )
+\section{Video: Using the FlatList component}
+\begin{itemize}
+    \item How to use:
+    \begin{lstlisting}[language=Java, numbers=none]
+        <FlatList
+            data={menuItemsToDisplay}
+            renderItem={renderItem}
+        />
+    \end{lstlisting} 
+    \item Props:
+    \begin{lstlisting}[language=Java, numbers=none]
+        // Array of item
+        menuItemsToDisplay;
+
+        // Return a HTML tag, custom tag in this case
+        const renderItem = ({ item }) => {
+            return <Item name={item.name} />
         }
+    \end{lstlisting} 
+
+    \item \textbf{Practice Question:} Which properties are required when using the \texttt{FlatList} component? Select all that apply.
+    $\rightarrow$ RenderItem, Data
+\end{itemize}
+
+\section{Reading: Explore the FlatList Component}
+This part is to pratice using FlatList as the same above part's work.
+
+\section{Reading: Exercise: Render a large list using FlatList}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\linewidth]{images/ex1.png}
+    \caption{Exercise: Render a large list using FlatList}
+\end{figure}
+
+\section{Self review: Render a large list uisng FlatList}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/sr-1.png}
+    \caption{Self review: Render a large list using FlatList}
+\end{figure}
+
+\section{Video: FlatList Methods}
+\subsection{keyExtractor}
+\begin{itemize}
+    \item Using \texttt{keyExtractor} for caching and as the react key to track item recording.
+    \item Using at the same as using \texttt{map()} in react, we need to pass a key props.
+\end{itemize}
+
+\subsection{ItemSeperatorComponent}
+\begin{itemize}
+    \item Using: 
+    \begin{lstlisting}[language=Java, numbers=none]
+        const Seperator = () => <View style={menuItemsStyle.seperator} />
+
+        <FlatList
+            data={menuItemsToDisplay}
+            keyExtractor={(item) => item.id}
+            renderItem={renderItem}
+            ItemSeparatorComponent={Seperator}
+        />
+    \end{lstlisting}
+\end{itemize}
+
+\subsection{ListHeaderComponent}
+\begin{itemize}
+    \item Using: 
+    \begin{lstlisting}[language=Java, numbers=none]
+        const Header = () => <Text style={menuItemsStyle.headerText}>View Menu</Text>
+
+        <FlatList
+            data={menuItemsToDisplay}
+            keyExtractor={(item) => item.id}
+            renderItem={renderItem}
+            ItemSeparatorComponent={Seperator}
+            ListHeaderComponent={Header}
+        />
     \end{lstlisting}
 
-    \item \textbf{Practive Question:} To be proficient in React Native, which programming languages should u also be proficient in? 
-    $\rightarrow$ Javascript, HTML, CSS.
+    \item \textbf{Practice Question:} In your app, you have written a header component, and then rendered that component inside of \texttt{FlatList} and passed it to the \texttt{ListHeaderComponent} prop. When the user scrolls through the list in the app, this header will remain fixed in place. True or false?
+    $\rightarrow$ False
 \end{itemize}
 
-\section{Video: Native, cross-platform \& hybrid developer roles}
-\subsection{Native development}
+\subsection{ListFooterComponent}
 \begin{itemize}
-    \item Platform: iOS, Android, Windows.
-    \item iOS:
-    \begin{itemize}[label=$\circ$]
-        \item Languages: Swift, Objective-C.
-        \item A macbook is required to build an iOS app.
-    \end{itemize}
-    \item Android: 
-    \begin{itemize}[label=$\circ$]
-        \item Languages: Java, Kotlin (Not exclusive to Android)
-    \end{itemize}
-\end{itemize}
+    \item Using: 
+    \begin{lstlisting}[language=Java, numbers=none]
+        const Footer = () => <Text style={menuItemsStyle.footerText}>Footer</Text>
 
-\subsection{Video: Cross-platform Application}
-\begin{itemize}
-    \item Apps built with a single codebase for multiple platforms.
-    \item Cross-platform developer: programmer who develop cross-platform application.
-    \item Other framework beside React Native: Flutter, Xamarin.
-    \item React Native is still more popular due to its large support libraries.
-\end{itemize}
-
-\subsection{Video: Hybrid app - another category of cross-platform apps}
-\begin{itemize}
-    \item Hybrid developer: programmer who develop hybrid application.
-    \item Hybrid app do not have access to built-in native  features of the devices.
-    \item Integrate native features to the app.
-    \item Render the graphic through the browers
-
-    \item \textbf{Practive Question:} You develop apps in React Basic that use the same codebase for multiple mobile platforms. What kind of mobile developer does this make you?   
-    $\rightarrow$ Cross-platform.
-\end{itemize}
-
-\section{Video: Meet a cross-platform Developer}
-\begin{itemize}
-    \item Eric Hartzog: SE at Meta.
-    \item What is rewarding about being a cross-platform dev?
-    \begin{itemize}[label=$\circ$]
-        \item You have an idea for building an app on iOS and you build it, you're going to learn all these technologies, all these languages, all these frameworks. You're going to get it, start it and create it and ship it.
-        \item Later on, if you want to build something in virtual reality, you'll be able to use those same skills that you learn to bring an experience in virtual reality. This is something to be very excited about.
-    \end{itemize}
-
-    \item What technical skills and soft skills are used in cross-platform developer?
-    \begin{itemize}[label=$\circ$]
-        \item Technology, Framework, Languages, Tools.
-        \item Communication with other developers, product managers, ...
-        \item Good practice in school to work with teammates.
-    \end{itemize}
-
-    \item What is your favorite part of being a cross-platform dev?
-    \begin{itemize}[label=$\circ$]
-        \item Ship products to people.
-        \item Get some feedback, help people out.
-    \end{itemize}
-
-    \item What do you value most about your work as a cross-platform dev?
-    \begin{itemize}[label=$\circ$]
-        \item Using a cross platform framework to build an application that is deployed, ship to somebody, and then makes a difference in their life. 
-    \end{itemize}
-\end{itemize}
-
-\section{Dialog: Bridging the Gap: Your React Foundation for Mobile Apps}
-\begin{center}
-  \begin{figure}[H]
-      \centering
-      \begin{minipage}{0.45\linewidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/1.pdf}\\
-        \includegraphics[width=\textwidth]{images/2.pdf}
-      \end{minipage}
-      \hfill
-      \begin{minipage}{0.45\linewidth}
-        \centering
-        \includegraphics[width=\textwidth]{images/3.pdf}\\
-        \includegraphics[width=\textwidth]{images/4.pdf}
-      \end{minipage}
-      \caption{My dialog about React Foundation with coach}
-    \end{figure}
-\end{center}
-
-\section{Reading: Course Syllabus}
-\textbf{Week 1: Introduction to React Native  }
-\begin{itemize}
-    \item Overview of React Native and its role in mobile development.
-    \item Setting up the development environment and core components.
-\end{itemize}
-
-\textbf{Week 2: Lists and Text Input}
-\begin{itemize}
-    \item Techniques for rendering large lists and managing user input.
-    \item Creating a login screen using TextInput.
-\end{itemize}
-
-\textbf{Week 3: Interactivity and Visuals}
-\begin{itemize}
-    \item Adding clickable areas with Pressable and displaying images.
-    \item Utilizing advanced hooks for better responsiveness.
-\end{itemize}
-
-\textbf{Week 4: Navigation}
-\begin{itemize}
-    \item Setting up React Navigation for screen transitions.
-    \item Configuring header bars and navigation systems.
-\end{itemize}
-
-\textbf{Week 5: Final Assessment}
-\begin{itemize}
-    \item Building a newsletter sign-up page and peer review.
-    \item Reflecting on the learning experience and next steps.
-\end{itemize}
-
-\section{Reading: How to be successful in this course}
-\begin{itemize}
-    \item Set daily goals for studying.
-    \item Create a dedicated study space.
-    \item Schedule time to study on your calendar.
-    \item Keep yourself accountable.
-    \item Actively take notes.
-    \item Join the discussion.
-    \item Do one thing at a time.
-    \item Take breaks.
-\end{itemize}
-
-\section{Video: React Native with Expo}
-\subsection{Required materials}
-\begin{itemize}
-    \item Install Node.
-    \item Install emulator. I'm using android studio.
-    \item Install IDE. I'm using VSCode.
-\end{itemize}
-
-\subsection{Create a sample React Native App}
-\begin{itemize}
-    \item Command:
-    \begin{lstlisting}[language=Bash, numbers=none]
-        npx create-expo-app [app_name]
+        <FlatList
+            data={menuItemsToDisplay}
+            keyExtractor={(item) => item.id}
+            renderItem={renderItem}
+            ItemSeparatorComponent={Seperator}
+            ListHeaderComponent={Header}
+            ListFooterComponent={Footer}
+        />
     \end{lstlisting}
-    \item My sample React Native App:
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.2\linewidth]{images/react-native-sample.pdf}
-        \caption{Sample React Native}
-        \label{fig:react-native-sample}
-    \end{figure}
-    \item \textbf{Practive Question:} Before you install the Expo package, which preliminary steps should you take?
-    $\rightarrow$ Install an emulator, Node, IDE
 \end{itemize}
+
+\section{Practice Assignment: Knowledge Check: Render large lists with FlatList}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{images/kc-1.png}
+    \caption{Knowledge Check: Render large lists with FlatList}
+\end{figure}

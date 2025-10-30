@@ -1,25 +1,52 @@
-import { ScrollView, Text, View, StyleSheet } from "react-native";
+import { ScrollView, Text, View, StyleSheet, FlatList } from "react-native";
 
 const menuItemsToDisplay = [
-  'Hummus \nPanna Cotta \nTiramisu \nBruschetta \nSpaghetti Carbonara \nMargherita Pizza \nCaesar Salad \nMushroom Risotto \nGarlic Bread \nCaprese Salad \nLasagna \nFettuccine Alfredo \nGnocchi \nMinestrone Soup \nAntipasto Platter \nRavioli \nChicken Parmesan \nGelato \nCannoli \nEspresso \nLimoncello \nProsciutto e Melone \nArancini \nPolenta \nCaponata \nZuppa Toscana \nPesto Pasta \nPanini \nCalzone \nSeafood Risotto \nGrilled Vegetables \nAffogato \nCrostini \nTortellini \nRisotto ai Funghi \nPanzanella \nSaltimbocca \nOssobuco \nFocaccia \nRicotta Cheesecake'
+  { name: 'Hummus', id: '1A' },
+  { name: 'Moutabal', id: '2B' },
+  { name: 'Falafel', id: '3C' },
+  { name: 'Marinated Olives', id: '4D' },
+  { name: 'Kofta', id: '5E' },
+  { name: 'Eggplant Salad', id: '6F' },
+  { name: 'Lentil Burger', id: '7G' },
+  { name: 'Smoked Salmon', id: '8H' },
+  { name: 'Kofta Burger', id: '9I' },
+  { name: 'Turkish Kebab', id: '10J' },
+  { name: 'Fries', id: '11K' },
+  { name: 'Buttered Rice', id: '12L' },
+  { name: 'Bread Sticks', id: '13M' },
+  { name: 'Pita Pocket', id: '14N' },
+  { name: 'Lentil Soup', id: '15O' },
+  { name: 'Greek Salad', id: '16P' },
+  { name: 'Rice Pilaf', id: '17R' },
+  { name: 'Baklava', id: '18S' },
+  { name: 'Tartufo', id: '19T' },
+  { name: 'Tartufo', id: '20U' },
+  { name: 'Tiramisu', id: '21V' },
+  { name: 'Panna Cotta', id: '22W' }
 ];
 
-const MenuItems = () => {
-
+const Item = ({ name }) => {
   return (
     <View style={menuStyle.container}>
-      <ScrollView
-        style={menuStyle.innerContainer}
-        horizontal={false}
-        indicatorStyle={'white'}
-      >
-        <Text style={menuStyle.headerText}>
-          View Menu
-        </Text>
-        <Text style={menuStyle.itemText}>
-          {menuItemsToDisplay[0]}
-        </Text>
-      </ScrollView>
+      <Text style={menuStyle.itemText}>{name}</Text>
+    </View>
+  )
+}
+
+const renderItem = ({ item }) => {
+  return <Item name={item.name} />
+}
+
+const MenuItems = () => {
+  return (
+    <View style={menuStyle.container}>
+      <Text style={menuStyle.headerText}>
+        View Menu
+      </Text>
+      <FlatList
+        data={menuItemsToDisplay}
+        renderItem={renderItem}
+      />
     </View>
   )
 }

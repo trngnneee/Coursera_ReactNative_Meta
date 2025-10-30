@@ -1,94 +1,177 @@
-\chapter{Views, Text and Scrollable components}
+\chapter{Working with TextInput components}
 
-\section{Video: What are View and Text components?}
-\subsection{View}
-
+\section{Reading: Common props of TextInput component}
+\subsection{placeholder}
 \begin{itemize}
-    \item View is the basic building block of the user interface.
-    \item It is a small rectangular element on the screen, houses all elements within it.
-    \item The view component is like a non-scrolling div tag in the web world.
+    \item The placeholder string displayed before the user enters anything into the text input box.
+    \item Syntax:
+    \begin{lstlisting}[language=Java, numbers=none]
+        <TextInput 
+            style={styles.input} 
+            value={firstName} 
+            onChangeText={onChangeFirstName} 
+            placeholder={'First Name'} 
+        /> 
+    \end{lstlisting}
 \end{itemize}
 
-\subsection{Text}
+\subsection{multiline}
 \begin{itemize}
-    \item A basic core component from React Native that is used for displaying text.
-    \item Support styling, nesting and touch handling.
-
-     \item \textbf{Practive Question:} The \texttt{View} component can be nested inside other views and can have zero or many children within it. True or false?
-    $\rightarrow$ True
+    \item Boolean. When set to true, the text input can be muliple lines.
+    \item By default, it is set to false, all the text that cannot fit within a single line is truncated and not visible to user.
+    \item Syntax:
+    \begin{lstlisting}[language=Java, numbers=none]
+        <TextInput 
+            style={styles.messageInput} 
+            value={message} 
+            onChangeText={onChangeMessage} 
+            placeholder={'Please leave feedback'} 
+            multiline={true} 
+        />
+    \end{lstlisting}
 \end{itemize}
 
-\section{Video: Using the View and Text Components}
+\subsection{maxLength}
 \begin{itemize}
-    \item Using \text{flex: 0.5} $\rightarrow$ the child component take 50\% of parent's space.
-    \item The text must be rendered within a text components.
-    \item Use nested text components, the child text components can be inherited the style from parent's components, we can also override the style.
-    \item Using \texttt{numberOfline={1}} to avoid wrap.
-    \item \textbf{Practive Question:} You have created a View component for your app and would like it to take 50\% of the space on the screen. Which of the following styling parameter settings would you apply to achieve this?
-    $\rightarrow$ flex: 0.5
+    \item This props limits the maximum number of characters that can be entered.
+    \item This props accepts a number as the value.
+    \item Syntax:
+    \begin{lstlisting}[language=Java, numbers=none]
+        <TextInput 
+            style={styles.messageInput} 
+            value={message} 
+            onChangeText={onChangeMessage} 
+            placeholder={'Please leave feedback'} 
+            multiline={true} 
+            maxLength={250}
+        />
+    \end{lstlisting}
 \end{itemize}
 
-\section{Reading: Exercise: Build a React Native Screen}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.2\linewidth]{images/ex2.pdf}
-    \caption{Exercise: Build a React Native Screen}
-    \label{fig:placeholder}
-\end{figure}
-
-\section{Self Review: Build a React Native screen}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\linewidth]{images/self-review-2.pdf}
-    \caption{Self Review: Build a React Native Screen}
-    \label{fig:placeholder}
-\end{figure}
-
-\section{Video: What is the ScrollView component?}
-\subsection{Problem}
+\subsection{keyboardType}
 \begin{itemize}
-    \item The menu items do not fit within the small mobile screen.
-    \item Users should be able to scroll up and down the menu.
+    \item React Native's support keyboard.
+    \item number-pad, decimal-pad, numeric, email-address, phone-pad, url, ...
+    \item Syntax:
+    \begin{lstlisting}[language=Java, numbers=none]
+        <TextInput 
+            style={styles.input} 
+            value={phoneNumber} 
+            onChangeText={onChangePhoneNumber} 
+            placeholder={'Phone Number'} 
+            keyboardType={'phone-pad'} 
+        />
+    \end{lstlisting} 
 \end{itemize}
 
-\subsection{ScrollView}
+\section{Video: Passing props to TextInput Component}
 \begin{itemize}
-    \item The ScrollView component has only one rule. It must be bounded by a height in order to work.
-    \item The parent node what wrap the ScrollView have to set a fix height.
-    \item Use this core component, we have both scroll view for iOS and Android.
-
-    \item \textbf{Practive Question:} Which of the following are true statements about the ScrollView component? Check all that apply.
-    $\rightarrow$ ScrollView is a core React Native component and comes as a part of the React Native Package, It must be bounded by a height in order to work.
+    \item Use \texttt{secureTextEntry={true}} to hide the input text from user (Use for password).
+    \item \textbf{Practice Question:} You would like to create a text input box in your app for users to enter their password. To make this more secure, you would like for the characters entered in the box to be hidden and for the box to have a limit of 14 characters. Which \texttt{TextInput} props would you pass in to accomplish this? Choose all that apply.   
+    $\rightarrow$ secureTextEntry, maxLength
 \end{itemize}
 
-\section{Video: Using the ScrollView component}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.2\linewidth]{images/scroll-view.pdf}
-    \caption{Scroll View practice}
-    \label{fig:placeholder}
+    \includegraphics[width=0.2\textwidth]{images/passing-props.png}
+    \caption{Passing props to TextInput Component}
 \end{figure}
 
-\section{Reading: Exercise: Build a scrollable component}
+\section{Reading: Exercise: Create a login page}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.2\linewidth]{images/scroll-view-practice.pdf}
-    \caption{Exercise: Build a scrollable component}
-    \label{fig:placeholder}
+    \includegraphics[width=0.2\textwidth]{images/Ex5.png}
+    \caption{Exercise: Create a login page}
 \end{figure}
 
-\section{Practice Assignment: Self review: Build a scrollable component}
+\section{Practice Assignment: Self review: Create a login page}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\linewidth]{images/self-review-3.pdf}
-    \caption{Self review: Build a scrollable component}
-    \label{fig:placeholder}
+    \includegraphics[width=0.5\textwidth]{images/sr-4.png}
+    \caption{Self review: Create a login page}
 \end{figure}
 
-\section{Practive Assignment: Knowledge check: Views, Text and Scrollable components}
+\section{Video: Using TextInput Methods}
+\subsection{onFocus}
+\begin{itemize}
+    \item This is a callback medthod that is called when the text input is focused.
+    \item $onFocus(() => \{ \})$
+\end{itemize}
+
+\subsection{onBlur}
+\begin{itemize}
+    \item This is also a callback method, called when the text input it remove from being focused.
+    \item $onBlur(() => \{ \})$
+\end{itemize}
+
+\section{clearButtonMode}
+\begin{itemize}
+    \item A clear button will appear on the right side of the text box.
+    \item This button allow to clear all the input text.
+    \item Only support for iOS.
+    \item Dont work if we have \texttt{multiline} props.
+    \item clearButtonMode='always'. The default is 'never'
+    \item \textbf{Practice Question:} You are creating a form for your app and would like it to display an alert whenever a user exits a certain text input box. Which prop of the \texttt{TextInput} component would you use to achieve this? 
+    $\rightarrow$ onBlur
+\end{itemize}
+
+\section{Reading: TextInput Methods}
+This part is the same content with above part which I have taken note clearly.
+
+\section{Practice Assignment: Knowledge Check: Props and methods in TextInput}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\linewidth]{images/knowledge-checking-3.pdf}
-    \caption{Knowledge check: Views, Text and Scrollable components}
-    \label{fig:placeholder}
+    \includegraphics[width=0.5\textwidth]{images/kc-4.png}
+    \caption{Knowledge Check: Props and methods in TextInput}
+\end{figure}
+
+\section{Video: Module summary: Lists and Text Input in React Native}
+\begin{itemize}
+    \item FlatList component
+    \begin{itemize}
+        \item Lazy rendering
+        \item FlatList syntax
+        \item Render large lists
+    \end{itemize}
+
+    \item FlatList methods
+    \begin{itemize}
+        \item keyExtractor
+        \item ItemSeperatorComponent
+        \item ListHeaderComponent
+        \item ListFooterComponent
+    \end{itemize}
+
+    \item SectionList component
+    \begin{itemize}
+        \item Differences from FlatList
+        \item SectionList syntax
+        \item Render large list with sections
+    \end{itemize}
+
+    \item TextInput component
+    \begin{itemize}
+        \item Create text input boxes
+        \item Configure TextInput
+        \item Create TextInput components in ScrollView
+    \end{itemize}
+
+    \item Keyboard Handling
+    \begin{itemize}
+        \item keyboardDismissMode
+        \item KeyboardAvoidingView
+    \end{itemize}
+
+    \item TextInput props
+    \begin{itemize}
+        \item Enable additional TextInput functionalities
+        \item Set responses to actions in text box
+    \end{itemize}
+\end{itemize}
+
+\section{Graded Assignment: Module quiz: Lists and Text Input in React Native}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/module-quiz.png}
+    \caption{Module quiz: Lists and Text Input in React Native}
 \end{figure}

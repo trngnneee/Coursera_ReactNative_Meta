@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.23)  23 OCT 2025 22:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.23)  30 OCT 2025 15:40
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**e:/Coursera/ReactNative/Report/main.tex
-(e:/Coursera/ReactNative/Report/main.tex
+**e:/Coursera/ReactNative/ReportTemplate/main.tex
+(e:/Coursera/ReactNative/ReportTemplate/main.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
 (reportDoCS2025.cls (C:\Users\ASUS\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
@@ -1238,32 +1238,7 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
- (main.aux
-
-LaTeX Warning: Label `fig:placeholder' multiply defined.
-
-
-LaTeX Warning: Label `fig:placeholder' multiply defined.
-
-
-LaTeX Warning: Label `fig:placeholder' multiply defined.
-
-
-LaTeX Warning: Label `fig:placeholder' multiply defined.
-
-
-LaTeX Warning: Label `fig:placeholder' multiply defined.
-
-
-LaTeX Warning: Label `fig:placeholder' multiply defined.
-
-
-LaTeX Warning: Label `fig:placeholder' multiply defined.
-
-
-LaTeX Warning: Label `fig:placeholder' multiply defined.
-
-)
+ (main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
@@ -1417,7 +1392,7 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.24 ...Video: React Native Code}{13}{section.2.2}
+l.24 ...ed into SectionList}{12}{subsection.2.1.4}
                                                   % [1
 
 
@@ -1442,231 +1417,196 @@ l.24 ...Video: React Native Code}{13}{section.2.2}
 
 ] (4.chapter_01.tex
 Chapter 1.
-
+(C:\Users\ASUS\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2024/09/23 1.10c listings language file
+)
 
 [5
 
 
-] (C:\Users\ASUS\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2024/09/23 1.10c listings language file
-)
+]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 42.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 56.
+
+
+[6]
+<images/ex1.png, id=397, 340.27126pt x 776.9025pt>
+File: images/ex1.png Graphic file (type png)
+<use images/ex1.png>
+Package pdftex.def Info: images/ex1.png  used on input line 71.
+(pdftex.def)             Requested size: 97.25003pt x 222.03595pt.
+<images/sr-1.png, id=399, 1445.4pt x 813.0375pt>
+File: images/sr-1.png Graphic file (type png)
+<use images/sr-1.png>
+Package pdftex.def Info: images/sr-1.png  used on input line 78.
+(pdftex.def)             Requested size: 243.1288pt x 136.75064pt.
+
+
+[7 <./images/ex1.png>]
+
+[8 <./images/sr-1.png>]
+<images/kc-1.png, id=419, 1445.4pt x 813.0375pt>
+File: images/kc-1.png Graphic file (type png)
+<use images/kc-1.png>
+Package pdftex.def Info: images/kc-1.png  used on input line 143.
+(pdftex.def)             Requested size: 243.1288pt x 136.75064pt.
+) (5.chapter_02.tex
+
+[9]
+
+[10 <./images/kc-1.png>]
+Chapter 2.
+
+
+[11
+
+]
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: TS1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
 
-[6]
-
-[7]
-<images/1.pdf, id=409, 1445.4pt x 776.9025pt>
-File: images/1.pdf Graphic file (type pdf)
-<use images/1.pdf>
-Package pdftex.def Info: images/1.pdf  used on input line 131.
-(pdftex.def)             Requested size: 218.81444pt x 117.6091pt.
-<images/2.pdf, id=411, 1445.4pt x 776.9025pt>
-File: images/2.pdf Graphic file (type pdf)
-<use images/2.pdf>
-Package pdftex.def Info: images/2.pdf  used on input line 132.
-(pdftex.def)             Requested size: 218.81444pt x 117.6091pt.
-<images/3.pdf, id=412, 1445.4pt x 776.9025pt>
-File: images/3.pdf Graphic file (type pdf)
-<use images/3.pdf>
-Package pdftex.def Info: images/3.pdf  used on input line 137.
-(pdftex.def)             Requested size: 218.81444pt x 117.6091pt.
-<images/4.pdf, id=413, 1445.4pt x 776.9025pt>
-File: images/4.pdf Graphic file (type pdf)
-<use images/4.pdf>
-Package pdftex.def Info: images/4.pdf  used on input line 138.
-(pdftex.def)             Requested size: 218.81444pt x 117.6091pt.
+[12]
+<images/ex2.png, id=482, 340.27126pt x 776.9025pt>
+File: images/ex2.png Graphic file (type png)
+<use images/ex2.png>
+Package pdftex.def Info: images/ex2.png  used on input line 77.
+(pdftex.def)             Requested size: 97.25003pt x 222.03595pt.
+<images/Ex3.png, id=483, 340.27126pt x 776.9025pt>
+File: images/Ex3.png Graphic file (type png)
+<use images/Ex3.png>
+Package pdftex.def Info: images/Ex3.png  used on input line 84.
+(pdftex.def)             Requested size: 97.25003pt x 222.03595pt.
 
 
-[8]
-
-[9 <./images/1.pdf> <./images/2.pdf> <./images/3.pdf> <./images/4.pdf>]
-
-[10] (C:\Users\ASUS\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2024/09/23 1.10c listings language file
-) (C:\Users\ASUS\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2024/09/23 1.10c listings language file
-)
-<images/react-native-sample.pdf, id=430, 328.22626pt x 753.5653pt>
-File: images/react-native-sample.pdf Graphic file (type pdf)
-<use images/react-native-sample.pdf>
-Package pdftex.def Info: images/react-native-sample.pdf  used on input line 204.
-(pdftex.def)             Requested size: 97.25003pt x 223.2772pt.
-) (5.chapter_02.tex
-
-[11 <./images/react-native-sample.pdf>]
-Chapter 2.
-
-
-[12
-
-]
-
-[13]
-
-[14]
-
-[15]
-<images/knowledge-checking-1.pdf, id=476, 1445.4pt x 813.0375pt>
-File: images/knowledge-checking-1.pdf Graphic file (type pdf)
-<use images/knowledge-checking-1.pdf>
-Package pdftex.def Info: images/knowledge-checking-1.pdf  used on input line 127.
+[13 <./images/ex2.png>]
+<images/sr-2.png, id=489, 1445.4pt x 813.0375pt>
+File: images/sr-2.png Graphic file (type png)
+<use images/sr-2.png>
+Package pdftex.def Info: images/sr-2.png  used on input line 91.
+(pdftex.def)             Requested size: 243.1288pt x 136.75064pt.
+<images/kc-2.png, id=490, 1445.4pt x 813.0375pt>
+File: images/kc-2.png Graphic file (type png)
+<use images/kc-2.png>
+Package pdftex.def Info: images/kc-2.png  used on input line 98.
 (pdftex.def)             Requested size: 243.1288pt x 136.75064pt.
 ) (6.chapter_03.tex
 
-[16 <./images/knowledge-checking-1.pdf>]
+[14 <./images/Ex3.png> <./images/sr-2.png>]
+
+[15 <./images/kc-2.png>]
 Chapter 3.
 
 
-[17
+[16
 
 ]
-<images/react-native-compo.pdf, id=490, 1047.16219pt x 603.0028pt>
-File: images/react-native-compo.pdf Graphic file (type pdf)
-<use images/react-native-compo.pdf>
-Package pdftex.def Info: images/react-native-compo.pdf  used on input line 43.
-(pdftex.def)             Requested size: 243.1288pt x 140.00348pt.
-
-
-[18 <./images/react-native-compo.pdf>]
-<images/ex1.pdf, id=502, 340.27126pt x 776.9025pt>
-File: images/ex1.pdf Graphic file (type pdf)
-<use images/ex1.pdf>
-Package pdftex.def Info: images/ex1.pdf  used on input line 78.
+<images/ex4.png, id=510, 340.27126pt x 776.9025pt>
+File: images/ex4.png Graphic file (type png)
+<use images/ex4.png>
+Package pdftex.def Info: images/ex4.png  used on input line 68.
 (pdftex.def)             Requested size: 97.25003pt x 222.03595pt.
-<images/self-review-1.pdf, id=503, 1445.4pt x 813.0375pt>
-File: images/self-review-1.pdf Graphic file (type pdf)
-<use images/self-review-1.pdf>
-Package pdftex.def Info: images/self-review-1.pdf  used on input line 87.
+
+
+[17]
+<images/Ex4 (2).png, id=523, 340.27126pt x 776.9025pt>
+File: images/Ex4 (2).png Graphic file (type png)
+<use images/Ex4 (2).png>
+Package pdftex.def Info: images/Ex4 (2).png  used on input line 75.
+(pdftex.def)             Requested size: 97.25003pt x 222.03595pt.
+<images/sr-3.png, id=524, 1445.4pt x 813.0375pt>
+File: images/sr-3.png Graphic file (type png)
+<use images/sr-3.png>
+Package pdftex.def Info: images/sr-3.png  used on input line 82.
 (pdftex.def)             Requested size: 243.1288pt x 136.75064pt.
 
 
-[19 <./images/ex1.pdf>]
-<images/knowledge-checking-2.pdf, id=515, 1445.4pt x 813.0375pt>
-File: images/knowledge-checking-2.pdf Graphic file (type pdf)
-<use images/knowledge-checking-2.pdf>
-Package pdftex.def Info: images/knowledge-checking-2.pdf  used on input line 95.
+[18 <./images/ex4.png> <./images/Ex4 (2).png>]
+
+[19 <./images/sr-3.png>]
+<images/kc-3.png, id=539, 1445.4pt x 813.0375pt>
+File: images/kc-3.png Graphic file (type png)
+<use images/kc-3.png>
+Package pdftex.def Info: images/kc-3.png  used on input line 140.
 (pdftex.def)             Requested size: 243.1288pt x 136.75064pt.
 ) (7.chapter_04.tex
 
-[20 <./images/self-review-1.pdf> <./images/knowledge-checking-2.pdf>]
+[20]
+
+[21 <./images/kc-3.png>]
 Chapter 4.
 
 
-[21
-
-]
-<images/ex2.pdf, id=526, 340.27126pt x 776.9025pt>
-File: images/ex2.pdf Graphic file (type pdf)
-<use images/ex2.pdf>
-Package pdftex.def Info: images/ex2.pdf  used on input line 34.
-(pdftex.def)             Requested size: 97.25003pt x 222.03595pt.
-<images/self-review-2.pdf, id=527, 1445.4pt x 813.0375pt>
-File: images/self-review-2.pdf Graphic file (type pdf)
-<use images/self-review-2.pdf>
-Package pdftex.def Info: images/self-review-2.pdf  used on input line 42.
-(pdftex.def)             Requested size: 243.1288pt x 136.75064pt.
-
-
-[22 <./images/ex2.pdf> <./images/self-review-2.pdf>]
-<images/scroll-view.pdf, id=534, 340.27126pt x 776.9025pt>
-File: images/scroll-view.pdf Graphic file (type pdf)
-<use images/scroll-view.pdf>
-Package pdftex.def Info: images/scroll-view.pdf  used on input line 67.
-(pdftex.def)             Requested size: 97.25003pt x 222.03595pt.
-<images/scroll-view-practice.pdf, id=535, 340.27126pt x 776.9025pt>
-File: images/scroll-view-practice.pdf Graphic file (type pdf)
-<use images/scroll-view-practice.pdf>
-Package pdftex.def Info: images/scroll-view-practice.pdf  used on input line 75.
-(pdftex.def)             Requested size: 97.25003pt x 222.03595pt.
-
-
-[23 <./images/scroll-view.pdf>]
-<images/self-review-3.pdf, id=541, 1445.4pt x 813.0375pt>
-File: images/self-review-3.pdf Graphic file (type pdf)
-<use images/self-review-3.pdf>
-Package pdftex.def Info: images/self-review-3.pdf  used on input line 83.
-(pdftex.def)             Requested size: 243.1288pt x 136.75064pt.
-<images/knowledge-checking-3.pdf, id=542, 1445.4pt x 813.0375pt>
-File: images/knowledge-checking-3.pdf Graphic file (type pdf)
-<use images/knowledge-checking-3.pdf>
-Package pdftex.def Info: images/knowledge-checking-3.pdf  used on input line 91.
-(pdftex.def)             Requested size: 243.1288pt x 136.75064pt.
-) (8.chapter_05.tex
-
-[24 <./images/scroll-view-practice.pdf> <./images/self-review-3.pdf>]
-
-[25 <./images/knowledge-checking-3.pdf>]
-Chapter 5.
-
-
-[26
+[22
 
 ]
 
-[27]
+[23]
+<images/passing-props.png, id=600, 338.01282pt x 776.9025pt>
+File: images/passing-props.png Graphic file (type png)
+<use images/passing-props.png>
+Package pdftex.def Info: images/passing-props.png  used on input line 76.
+(pdftex.def)             Requested size: 97.25003pt x 223.51776pt.
+<images/Ex5.png, id=601, 338.01282pt x 776.9025pt>
+File: images/Ex5.png Graphic file (type png)
+<use images/Ex5.png>
+Package pdftex.def Info: images/Ex5.png  used on input line 83.
+(pdftex.def)             Requested size: 97.25003pt x 223.51776pt.
 
-[28]
 
-[29]
-
-[30]
-
-[31]
-<images/self-review-4.png, id=734, 1445.4pt x 813.0375pt>
-File: images/self-review-4.png Graphic file (type png)
-<use images/self-review-4.png>
-Package pdftex.def Info: images/self-review-4.png  used on input line 227.
+[24 <./images/passing-props.png>]
+<images/sr-4.png, id=608, 1445.4pt x 813.0375pt>
+File: images/sr-4.png Graphic file (type png)
+<use images/sr-4.png>
+Package pdftex.def Info: images/sr-4.png  used on input line 90.
 (pdftex.def)             Requested size: 243.1288pt x 136.75064pt.
 
 
-[32]
+[25 <./images/Ex5.png> <./images/sr-4.png>]
+<images/kc-4.png, id=615, 1445.4pt x 813.0375pt>
+File: images/kc-4.png Graphic file (type png)
+<use images/kc-4.png>
+Package pdftex.def Info: images/kc-4.png  used on input line 124.
+(pdftex.def)             Requested size: 243.1288pt x 136.75064pt.
 
-[33 <./images/self-review-4.png>]
-<images/module-quiz-1.png, id=773, 1445.4pt x 813.0375pt>
-File: images/module-quiz-1.png Graphic file (type png)
-<use images/module-quiz-1.png>
-Package pdftex.def Info: images/module-quiz-1.png  used on input line 287.
+
+[26]
+
+[27 <./images/kc-4.png>]
+<images/module-quiz.png, id=626, 1445.4pt x 813.0375pt>
+File: images/module-quiz.png Graphic file (type png)
+<use images/module-quiz.png>
+Package pdftex.def Info: images/module-quiz.png  used on input line 175.
 (pdftex.def)             Requested size: 243.1288pt x 136.75064pt.
 )
 
-[34]
-
-[35 <./images/module-quiz-1.png>]
-runsystem(latexminted cleantemp  --timestamp 20251023221723 FAD58DE7366495DB4650CFEFAC2FCD61)...executed.
+[28 <./images/module-quiz.png>]
+runsystem(latexminted cleantemp  --timestamp 20251030154007 FAD58DE7366495DB4650CFEFAC2FCD61)...executed.
 
  (main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: A1D312804D9A166004150AB23390A130;14021.
+(rerunfilecheck)             Checksum: 2D1A54D6E4EB976C01CAA881A5A739B5;14281.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 59343 strings out of 468081
- 1364128 string characters out of 5426272
- 2538894 words of memory out of 5000000
- 86742 multiletter control sequences out of 15000+600000
- 641454 words of font info for 133 fonts, out of 8000000 for 9000
+ 59111 strings out of 468081
+ 1359747 string characters out of 5426272
+ 2518758 words of memory out of 5000000
+ 86635 multiletter control sequences out of 15000+600000
+ 641613 words of font info for 133 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 123i,13n,121p,1228b,2915s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\ASUS\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt1095.pk> <C:\Users\ASUS\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on main.pdf (36 pages, 2245532 bytes).
+ 123i,13n,121p,1236b,3012s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\ASUS\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tctt1095.pk> <C:\Users\ASUS\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/ASUS/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on main.pdf (29 pages, 1612733 bytes).
 PDF statistics:
- 891 PDF objects out of 1000 (max. 8388607)
- 352 named destinations out of 1000 (max. 500000)
- 32863 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 726 PDF objects out of 1000 (max. 8388607)
+ 236 named destinations out of 1000 (max. 500000)
+ 33341 words of extra memory for PDF output out of 35830 (max. 10000000)
 

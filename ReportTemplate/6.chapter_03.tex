@@ -1,98 +1,142 @@
-\chapter{React Native Components}
+\chapter{Accept user input}
 
-\section{Video: What are React Native Components}
-\subsection{Basic Concept}
+\section{Video: What is the TextInput component?}
+\subsection{Use case in this project}
 \begin{itemize}
-    \item In React, you use a basic building block to build the UI, namely a component. Components let you split the UI into independent reusable pieces. 
-    \item When you put all of these independent pieces of components together, you build a complete app. 
-    \item The same concept is true for React Native since it is built using React.
-    \item Some reusable React's components:
-    \begin{itemize}[label=$\circ$]
-        \item Headers
-        \item Footers
-        \item Menu bars
-        \item Images
+    \item Little Lemon App want to get the feedback from the customer.
+    \item They allow users to type in their name, contact details and custom messages.
+\end{itemize}
+
+\subsection{TextInput}
+\begin{itemize}
+    \item A native component that will open up the native iOS or Android keyboard depending on the device you are using.
+    \item The same code, users have different experiences across platform.
+    \item Benefits:
+    \begin{itemize}
+        \item Auto correction
+        \item Placeholder text
+        \item Support for different keyboard types
+        \item Auto capitalization
     \end{itemize}
 \end{itemize}
 
-\subsection{Categorization}
+\subsection{Syntax}
 \begin{itemize}
-    \item Core components
-    \begin{itemize}[label=$\circ$]
-        \item View, Text, Image, TextInput, ScrollView, ...
-        \item They are ready to use.
-        \item They translate into native iOS and native Android components. This means they can adapt to work with your device's native functionality without the need for specialized code. You do not need to concern yourself about how that happens.
+    \item TextInput syntax
+\end{itemize}
+\begin{lstlisting}[language=Java, numbers=none]
+    <TextInput
+        // Styles
+        style={styles.input}
+        onChangeText={onChangeFirstName}
+        // Default text in input box
+        placeholder='First name'
+        // Value displayed in the input box
+        value={firstName}
+    />
+\end{lstlisting}
+\begin{itemize}
+    \item \texttt{onChangeText}
+    \begin{itemize}
+        \item Its a callback.
+        \item Use with \texttt{useState()}
+        \begin{lstlisting}[language=Java, numbers=none]
+            const [firstName, onChangeFirstName] = useState('')
+        \end{lstlisting}
     \end{itemize}
-    \item Community components
-    \begin{itemize}[label=$\circ$]
-        \item React Navigation, React Native Screen, React Native Maps, React Native Videos, ...
-        \item The original package by itself is quite lean. 
-    \end{itemize}
-    \item Your native components
-    \begin{itemize}[label=$\circ$]
-        \item Your native components and you own them.
-        \item Written in native code. Built by developers who are experienced in native mobile development.
-        \item You can make them available as open source for the community.
-    \end{itemize}
-
-    \item \textbf{Practive Question:} Which component type is built into the react-native package and comes ready-to-use?  
-    $\rightarrow$ Core components
-
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.5\linewidth]{images/react-native-compo.pdf}
-        \caption{React Native Components}
-    \end{figure}
+    
+    \item \textbf{Practice Question:} In the Little Lemon mobile app, you’d like a to add a text input box that displays the text “Email address” before the user types anything inside of it. Which prop would you pass in to accomplish this?
+    $\rightarrow$ placeholder 
 \end{itemize}
 
-\section{Video: Building a components}
 \begin{itemize}
-    \item Create a components folder. Add a \texttt{LittleLemonHeader.js} to this folder.
-    \item Implement this header: 
-    \begin{lstlisting}[language=Java, numbers=none]
-        import * as React from 'react'
-        import { Text, View } from 'react-native'
-        
-        export default function LittleLemonHeader(){
-          return (
-            <View>
-              <Text>Littel Lemon Restaurant</Text>
-            </View>
-          )
-        }
-    \end{lstlisting}
-    \item Use it in the \texttt{main.js}.
-
-    \item \textbf{Practive Question:} Custom Components in React are reusable throughout the app. True or false? 
-    $\rightarrow$ True
+    \item More props:
+    \begin{itemize}
+        \item \texttt{keyboardType}: "default","number pad", "decimal pad", "numeric", "email address", "phone pad", ...
+    \end{itemize}
 \end{itemize}
 
-\section{Reading: Exploring building a components}
-This part is the same way to build a component as the above section.
-
-\section{Reading: Exercise: Your first React Native components}
+\section{Video: Configure the TextInput Component}
 \begin{itemize}
-    \item This part is about creating a footer components after the header work.
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.2\linewidth]{images/ex1.pdf}
-        \caption{Exercise: Your first React Native components}
-        \label{fig:placeholder}
-    \end{figure}
+    \item \textbf{Practice Question:} You are adding a text input box to your app for the user to enter their email address. You will need to configure at least two separate \texttt{TextInput} components to do this – one for iOS devices, and another for Android devices. True or false?  
+    $\rightarrow$ False 
 \end{itemize}
 
-\section{Self review: Your first React Native components}
+\section{Reading: TextInput Component and its Feature}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\linewidth]{images/self-review-1.pdf}
-    \caption{Self review: Your first React Native components}
-    \label{fig:placeholder}
+    \includegraphics[width=0.2\textwidth]{images/ex4.png}
+    \caption{TextInput Component}
 \end{figure}
 
-\section{Knowledge checking: React Native Components}
+\section{Reading: Exercise: Create a TextInput Component}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\linewidth]{images/knowledge-checking-2.pdf}
-    \caption{Knowledge checking: React Native Components}
-    \label{fig:placeholder}
+    \includegraphics[width=0.2\textwidth]{images/Ex4 (2).png}
+    \caption{Exercise: Create a TextInput Component}
+\end{figure}
+
+\section{Practice Assignment: Self review: Create a TextInput Component}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/sr-3.png}
+    \caption{Self review: Create a TextInput Component}
+\end{figure}
+
+\section{Video: Virtual Keyboard on Mobiles App}
+\subsection{Problem about keyboard}
+\begin{itemize}
+    \item Open the virtual keyboard in an emulator:
+    \item Ctrl/Cmd + Shift + K
+    \item When the keyboard opens, it may cover important parts of your app. 
+\end{itemize}
+
+\subsection{React Native Props}
+\begin{itemize}
+    \item \texttt{keyboardDismissMode} property
+    \begin{itemize}
+        \item The keyboard will be dismissed when user scrolls the view.
+        \begin{lstlisting}[language=Java, numbers=none]
+            <ScrollView keyboardDismissMode='on-drag'/>
+        \end{lstlisting}
+        \item Set to none if you want the keyboard to stay open even when the user scrolls the view.
+    \end{itemize}
+
+    \item \texttt{KeyboardAvoidingView} component
+    \begin{itemize}
+        \item Automatically adjust its height, position, or padding to avoid conflict with other views.
+        \item Push the view on the top of the keyboard when it appears.
+        \item This component inherit all the props of the View component.
+        \begin{lstlisting}[language=Java, numbers=none]
+            <KeyboardAvoidingView
+                behavior={Platform.OS === 'ios' ? 'padding' : 'position'}
+            >
+                <TextInput
+                    style={styles.input}
+                    onChangeText={onChangeFirstName}
+                    placeholder='First name'
+                    value={firstName}
+                />
+            </KeyboardAvoidingView>
+        \end{lstlisting}
+    \end{itemize}
+
+    \item \textbf{Practice Question:} Your app has text input boxes that open the virtual keyboard when tapped. For the \texttt{keyboardDismissMode} property of the \texttt{ScrollView}, you’ve set the value to \texttt{on-drag}. What does this do?   
+    $\rightarrow$ The virtual keyboard will be dismissed when the user scrolls.   
+\end{itemize}
+
+\section{Reading: Tips and Tricks to handle virtual keyboard}
+This part is the same as in the previous section about virtual keyboard.
+
+\section{Video: Handling the Virtual Keyboard}
+\begin{itemize}
+    \item \textbf{Practice Question:} In your mobile app, you want to set the virtual keyboard to be dismissed as soon as the user scrolls. Which value of \texttt{keyboardDismissMode} would you assign to set this behavior?   
+    $\rightarrow$ on-drag
+\end{itemize}
+
+\section{Practice Assignment: Knowledge Check: Accept user input}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/kc-3.png}
+    \caption{Knowledge Check: Accept user input}
 \end{figure}
