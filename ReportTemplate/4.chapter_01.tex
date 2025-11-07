@@ -1,145 +1,122 @@
-\chapter{Render large list with FlatList}
+\chapter{React Navigation}
 
-\section{Video: Rendering large lists using FlatList component}
-\subsection{Why FlatList?}
+\section{Video: What is React Navigation}
+\subsection{Problem}
 \begin{itemize}
-    \item While ScrollView provides a very useful functionality, it does also introduce the issue of slow rendering times for large lists.
-    \item FlatList is another approach that can enable faster performance.
-    \item Rendreing time with FlatList is not affected by large lists.
-    \item For example, using ScrollView with text and images can take a lot of time waiting for rendering because user have to wait for all these images load before they can experience the app.
+    \item Moving between screens is referred to as navigation or routing in mobile apps.
+    \item Mobile apps have multiple screens and the user's experience relies on smooth navigation between these screens.
+    \item React Native does not have inbuilt navigation, it must pick a navigation library to implement moving between the screens and the app.
+    $\rightarrow$ React Navigation comes onto the screen
 \end{itemize}
 
-\subsection{FlatList - Lazy rendering}
+\subsection{React Native Navigation}
 \begin{itemize}
-    \item Instead of rendering the items all at once, FlatList render as the items appear.
-    \item Items are only rendered when they are about to appear on the screen and are removed when the user scrolls away from them.
-    \item Result in faster rendering and superior performance.
-    \item \textbf{Practice Question:} The \texttt{FlatList} component uses lazy rendering of component items. Which of the following are characteristics of lazy rendering? Choose all that apply.
-    $\rightarrow$ Items are rendered as the user encounters them in the app, Rendered items are removed when the user scrolls away from them.
+    \item React Navigation is the most popular navigation library for React Native apps today.
+    \item It is easy to use, customizable based on your needs, and has platform-specific components for both iOS and Android.
+    \item Can be used for both React Native CLI apps and React Native built with Expo.
+    \item It provides a Native Stack Navigator that can transition between screens and manage the navigation history.
 \end{itemize}
 
-\subsection{Syntax for FlatList}
+\subsection{Benefit of using React Native Navigation}
 \begin{itemize}
-    \item Basic use: 
-    \begin{lstlisting}[language=Java, numbers=none]
-        <FlatList 
-            data={items}
-            renderItem={renderItem}
-        />
-    \end{lstlisting}
-    \item Props: 
-    \begin{lstlisting}[language=Java, numbers=none]
-        renderItem({ item, index, separators })
-    \end{lstlisting}
-    \begin{itemize}
-        \item item: single from array.
-        \item index: unique index from the data array.
-        \item separators: optional, highligh or unhighligh items.
+    \item The difference between routing and navigation works in web browsers versus React Navigation for mobile app: \textbf{React Navigation provides the gestures and animations.}
+    \item React Native provides Screens, which provide native navigation container components
+    \item Its also provides gesture handler, which make React Native more compatible with native touch and gesture system.
+    \item Which brings:
+    \begin{itemize} 
+        \item Easier to push OTA updates.
+        \item Easier to debug.
+        \item Possible to customize navigator components.
     \end{itemize}
 \end{itemize}
 
-\section{Video: Using the FlatList component}
+\subsection{Trade off}
 \begin{itemize}
-    \item How to use:
-    \begin{lstlisting}[language=Java, numbers=none]
-        <FlatList
-            data={menuItemsToDisplay}
-            renderItem={renderItem}
-        />
-    \end{lstlisting} 
-    \item Props:
-    \begin{lstlisting}[language=Java, numbers=none]
-        // Array of item
-        menuItemsToDisplay;
-
-        // Return a HTML tag, custom tag in this case
-        const renderItem = ({ item }) => {
-            return <Item name={item.name} />
-        }
-    \end{lstlisting} 
-
-    \item \textbf{Practice Question:} Which properties are required when using the \texttt{FlatList} component? Select all that apply.
-    $\rightarrow$ RenderItem, Data
+    \item Some of the navigators don't directly use the native navigation APIs on iOS and Android. 
+    \item While gaining access to new features after upgrading is generally good news, it's possible that code using older APIs will no longer work as expected.
 \end{itemize}
 
-\section{Reading: Explore the FlatList Component}
-This part is to pratice using FlatList as the same above part's work.
+\subsection{Other commonly used library}
+\begin{itemize}
+    \item React-native-router-flux
+    \item React-native-navigation
+\end{itemize}
 
-\section{Reading: Exercise: Render a large list using FlatList}
+\textbf{Practice Question:} React Navigation is the most popular navigation library for React Native apps. Which of the following are characteristics of this library? Select all that apply.
+$\rightarrow$ Answer:
+\begin{itemize}
+    \item iOS-specific components.
+    \item Customizable navigators 
+    \item Android-specific components.
+\end{itemize}
+
+\section{Reading: Installation and Setup of React Navigation}
+\begin{lstlisting}[language=Java, numbers=none]
+    npm install @react-navigation/native
+
+    npx expo install react-native-screens react-native-safe-area-context
+\end{lstlisting}
+
+\section{Video: Setting up React Navigation}
+\textbf{Documentation:} https://reactnavigation.org/
+\textbf{Practice Question:} What are the base packages you would need to install to setup React Navigation within your project? Select all that apply.
+$\rightarrow$ Answer:
+\begin{itemize}
+    \item @react-navigation/native
+    \item react-native-safe-area-context
+    \item react-native-screens
+\end{itemize}
+
+\section{Video: Using the Stack.Navigator}
+\textbf{Practice Question:} The name given to a screen within a Stack.Navigator must match the name of the component that it calls. True or false?  
+$\rightarrow$ Answer: False
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.2\linewidth]{images/ex1.png}
-    \caption{Exercise: Render a large list using FlatList}
+    \includegraphics[width=0.2\textwidth]{images/ex1.png}
+    \caption{Using the Stack.Navigator}
 \end{figure}
 
-\section{Self review: Render a large list uisng FlatList}
+\section{Reading: Creating and Configuring Native Stack Navigator}
+This part is the same progress of using Stack.Navigator that I have done in the above section.
+
+\section{Video: Approaches to Passing Props to Screen}
+\begin{itemize}
+    \item To change the title of the Stack Screen, use in Stack.Screen:
+    \begin{lstlisting}[language=Java, numbers=none]
+        options={{ title: '...' }}
+    \end{lstlisting}
+
+    \item To set the root Stack that would be viewed when user open the first time, use in Stack.Navigator:
+    \begin{lstlisting}[language=Java, numbers=none]
+        initialRouteName='...'
+    \end{lstlisting}
+\end{itemize}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\linewidth]{images/sr-1.png}
-    \caption{Self review: Render a large list using FlatList}
+    \includegraphics[width=0.2\textwidth]{images/ex2.png}
+    \caption{Passing prop into Stack}
 \end{figure}
 
-\section{Video: FlatList Methods}
-\subsection{keyExtractor}
-\begin{itemize}
-    \item Using \texttt{keyExtractor} for caching and as the react key to track item recording.
-    \item Using at the same as using \texttt{map()} in react, we need to pass a key props.
-\end{itemize}
+\section{Reading: Passing props to Screen}
+This part is the same progress that I have done in the above section.
 
-\subsection{ItemSeperatorComponent}
-\begin{itemize}
-    \item Using: 
-    \begin{lstlisting}[language=Java, numbers=none]
-        const Seperator = () => <View style={menuItemsStyle.seperator} />
-
-        <FlatList
-            data={menuItemsToDisplay}
-            keyExtractor={(item) => item.id}
-            renderItem={renderItem}
-            ItemSeparatorComponent={Seperator}
-        />
-    \end{lstlisting}
-\end{itemize}
-
-\subsection{ListHeaderComponent}
-\begin{itemize}
-    \item Using: 
-    \begin{lstlisting}[language=Java, numbers=none]
-        const Header = () => <Text style={menuItemsStyle.headerText}>View Menu</Text>
-
-        <FlatList
-            data={menuItemsToDisplay}
-            keyExtractor={(item) => item.id}
-            renderItem={renderItem}
-            ItemSeparatorComponent={Seperator}
-            ListHeaderComponent={Header}
-        />
-    \end{lstlisting}
-
-    \item \textbf{Practice Question:} In your app, you have written a header component, and then rendered that component inside of \texttt{FlatList} and passed it to the \texttt{ListHeaderComponent} prop. When the user scrolls through the list in the app, this header will remain fixed in place. True or false?
-    $\rightarrow$ False
-\end{itemize}
-
-\subsection{ListFooterComponent}
-\begin{itemize}
-    \item Using: 
-    \begin{lstlisting}[language=Java, numbers=none]
-        const Footer = () => <Text style={menuItemsStyle.footerText}>Footer</Text>
-
-        <FlatList
-            data={menuItemsToDisplay}
-            keyExtractor={(item) => item.id}
-            renderItem={renderItem}
-            ItemSeparatorComponent={Seperator}
-            ListHeaderComponent={Header}
-            ListFooterComponent={Footer}
-        />
-    \end{lstlisting}
-\end{itemize}
-
-\section{Practice Assignment: Knowledge Check: Render large lists with FlatList}
+\section{Reading: Exercise: Set up Routes}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\linewidth]{images/kc-1.png}
-    \caption{Knowledge Check: Render large lists with FlatList}
+    \includegraphics[width=0.2\textwidth]{images/ex3.png}
+    \caption{Exercise: Set up Routes}
+\end{figure}
+
+\section{Practice Assignment: Self review: Set up Routes}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/sr1.png}
+    \caption{Self review: Set up Routes}
+\end{figure}
+
+\section{Practice Assignment: Knowledge Check: Introduction to React Navigation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/kc1.png}
+    \caption{Knowledge Check: Introduction to React Navigation}
 \end{figure}

@@ -1,100 +1,158 @@
-\chapter{Render Large Lists with SectionList}
+\chapter{Images Component}
 
-\section{Video: Render large lists by sections using SectionList}
-\subsection{Why SectionList?}
+\section{Video: Displaying Images in React Native}
+\subsection{Images Component}
 \begin{itemize}
-    \item The entire menu rendered with FlatList is presented as one long uninterrupted list. 
-    \item To make things tidy, divide the list into sections.
-    \item SectionLists has the same features found in FlatList component, but it also supports the separation of items in the lists.
+    \item It is a core component used to displaying different types of images.
+    \item Display:
+    \begin{itemize}
+        \item Static images from Resources
+        \item Temporary local images
+        \item Images from local disk
+        \item Network images
+    \end{itemize}
 \end{itemize}
 
-\subsection{Comparision between FlatList and SectionList components}
+\subsection{Using}
 \begin{itemize}
-    \item FlatList and SectionList use the same lazy rendering and inherits the props of the ScrollView.
-    \item SectionList support break the layout into smaller chunks and add appropriate child-headers.
-    \item \textbf{Practice Question:} Which of the following are characteristics of the \texttt{SectionList} component? Select all that apply.
-    $\rightarrow$ It uses lazy rendering, It supports section headers and separators, It inherits props of the \texttt{ScrollView} component.
-\end{itemize}
-
-$\rightarrow$ SectionList improves performance and enables to present the menu items in a more pleasant and easy to read.
-
-\subsection{Syntax}
-\textbf{SectionList component syntax}
-\begin{lstlisting}[language=Java, numbers=none]
-    <SectionList
-        sections={items} // Array of list sections
-        renderItem={renderItem} // Default renderer
-    />
-\end{lstlisting}
-\begin{itemize}
-    \item The sections must follow this structure:
+    \item Create a img folder within the project folder.
+    \item Syntax:
     \begin{lstlisting}[language=Java, numbers=none]
-        [
-            {
-                title: '',
-                data: []
-            },
-            ...
-        ]
+        <View>
+            <Image
+                style={}
+                source={require('url')}
+            />
+        </View>
     \end{lstlisting}
-
-    \item Then \texttt{renderItem} uses the below props, which the item is each item of \texttt{data} array.
-    \item The \texttt{renderSectionHeader} need to pass the single section, then extract the title from those section.
+    \item New props to pass in the style: \texttt{resizeMode}, which determines how to resize the image when the frame doesn't match the image's dimensions.
+    \item Option: 'strech', 'repeat', 'cover', 'center'
+    \item If the images is hosted on network:
+    \begin{lstlisting}[language=Java, numbers=none]
+        <View>
+            <Image
+                style={}
+                source={{
+                    uri: 'url'
+                }}
+            />
+        </View>
+    \end{lstlisting}
+    \item React Native also provides \texttt{loadingIndicatorSource}, which represents resources used to render the loading indicator, this is displayed until the resources is fully loaded.
+    \item \textbf{Practice Question: } You would like to add some images to your mobile app using the 
+    \texttt{Image} component. Which sources can you retrieve images from? Choose all that apply. \\
+    $\rightarrow$ Answer:
+    \begin{itemize}
+        \item A local drive on your computer
+        \item A web URL
+        \item Temporary Images
+        \item Resources
+    \end{itemize}
 \end{itemize}
 
-\textbf{renderItem syntax}
-\begin{lstlisting}[language=Java, numbers=none]
-    renderItem({ item, index, section, separators });
-
-    /*
-        item: section data key
-        index: item position in section
-        section: section object
-        separators: contains special functions
-    */
-\end{lstlisting}
-
-\subsection{Some props could be passed into SectionList}
+\subsection{Support images type}
 \begin{itemize}
-    \item Header
-    \item Footer
-    \item Separators
-    \item ...
+    \item png
+    \item jpg
+    \item gif
+    \item webp
+    \item These type are supported for both iOS and Android.
+    \item In addition, iOS supports for psd, raw and some other uncompressed image format.
 \end{itemize}
 
-\section{Video: Using the SectionList component}
+\section{Video: Using Image Component}
 \begin{itemize}
-    \item \textbf{Practice Question:} You are creating a ‘Contact’ page for your React Native app that separates contact details into sections such as email, phone, and social media. In your \texttt{SectionList} component, which property would you use to extract the data from the array to render these section headers?  
-    $\rightarrow$ renderSectionHeader 
-
-    \item The iOS's Header of each section sticks to the top of the SectionList.
-    \item Its not applied for Android.
+    \item \textbf{Practice Question: } In your project folder, you have a folder called \texttt{img} inside of which you have uploaded an image file titled \texttt{header.png}. How would you render this image using an \texttt{Image} component? Choose the appropriate line of code from the following.
+    $\rightarrow$
+    \begin{lstlisting}[language=Java, numbers=none]
+        <Image source=/{require('img/header.png')/} />
+    \end{lstlisting}
 \end{itemize}
 
-\section{Reading: Explore the SectionList component}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{images/images1.png}
+    \caption{Using Image Component}
+\end{figure}
+
+\section{Video: Styling an Image within the app}
+\begin{itemize}
+    \item This part is to use the \texttt{resizeMode} method that I have already used in the above part.
+    \item \textbf{Practice Question:} Which one of the resize modes is described in the following statement:  It will scale the image uniformly so that both the dimensions – the width and the height of the image will be equal to or less than the corresponding dimension of the view. 
+    $\rightarrow$ Contain
+\end{itemize}
+
+\section{Video: Passing props to the Image Component}
+\begin{itemize}
+    \item Using \texttt{accessible} props, a Boolean.
+    \item When the Boolean is true, it indicates that the image is an accessibility element.
+    \item \textbf{Practice Question:} If you want an image to fill the entire box, which of the following resize mode props will you use?  
+    $\rightarrow$ Cover
+\end{itemize}
+
+\section{Reading: Exploring props to the Image Component}
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/contain.png}
+        \caption{resizeMode contain}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/cover.png}
+        \caption{resizeMode cover}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=0.5\textwidth]{images/stretch.png}
+        \caption{resizeMode strech}
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/center.png}
+        \caption{resizeMode center}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[b]{0.32\textwidth}
+        \centering
+        \includegraphics[width=0.4\textwidth]{images/repeat.png}
+        \caption{resizeMode repeat}
+    \end{minipage}
+\end{figure}
+
+\section{Video: Setting Background Images}
+\begin{itemize}
+    \item imageBackground component, which can utilize display background images.
+    \item This component support for both iOS and Android.
+    \item Its inherit all props from the Images.
+    \item \textbf{Practice Question:} When an image is rendered as a background image, it implies that you can have text and other content on top of it. True or false?
+    \item $\rightarrow$ True
+\end{itemize}
+
+\section{Reading: Exercise: Displaying Images in your app}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.2\textwidth]{images/ex2.png}
-    \caption{Exercise: Explore the SectionList component}
+    \caption{Exercise: Displaying Images in your app}
 \end{figure}
 
-\section{Reading: Exercise: Render a large list using SectionList}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.2\textwidth]{images/Ex3.png}
-    \caption{Exercise: Render a large list using SectionList}
-\end{figure}
-
-\section{Practice Assignment: Self review: Render a large list using SectionList}
+\section{Practice Assignment: Self review: Displaying Images in your app}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/sr-2.png}
-    \caption{Self review: Render a large list using SectionList}
+    \caption{Self review: Displaying Images in your app}
 \end{figure}
 
-\section{Practice Assignment: Knowledge checking: Render a large list using SectionList}
+\section{Practice Assignment: Knowledge Check: Images in React Native}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/kc-2.png}
-    \caption{Knowledge Check: Render a large list using SectionList}
+    \caption{Knowledge Check: Images in React Native}
 \end{figure}

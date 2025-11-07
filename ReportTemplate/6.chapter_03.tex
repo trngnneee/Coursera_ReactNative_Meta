@@ -1,142 +1,151 @@
-\chapter{Accept user input}
+\chapter{Hooks}
 
-\section{Video: What is the TextInput component?}
-\subsection{Use case in this project}
+\section{Video: What are Hooks?}
 \begin{itemize}
-    \item Little Lemon App want to get the feedback from the customer.
-    \item They allow users to type in their name, contact details and custom messages.
-\end{itemize}
-
-\subsection{TextInput}
-\begin{itemize}
-    \item A native component that will open up the native iOS or Android keyboard depending on the device you are using.
-    \item The same code, users have different experiences across platform.
-    \item Benefits:
-    \begin{itemize}
-        \item Auto correction
-        \item Placeholder text
-        \item Support for different keyboard types
-        \item Auto capitalization
-    \end{itemize}
-\end{itemize}
-
-\subsection{Syntax}
-\begin{itemize}
-    \item TextInput syntax
-\end{itemize}
-\begin{lstlisting}[language=Java, numbers=none]
-    <TextInput
-        // Styles
-        style={styles.input}
-        onChangeText={onChangeFirstName}
-        // Default text in input box
-        placeholder='First name'
-        // Value displayed in the input box
-        value={firstName}
-    />
-\end{lstlisting}
-\begin{itemize}
-    \item \texttt{onChangeText}
-    \begin{itemize}
-        \item Its a callback.
-        \item Use with \texttt{useState()}
-        \begin{lstlisting}[language=Java, numbers=none]
-            const [firstName, onChangeFirstName] = useState('')
-        \end{lstlisting}
-    \end{itemize}
+    \item useState hook is used to manage the state within a component and to keep track of this.
+    \item \textbf{Practice Question:} Observe the following line of code which sets up the useState hook:  
     
-    \item \textbf{Practice Question:} In the Little Lemon mobile app, you’d like a to add a text input box that displays the text “Email address” before the user types anything inside of it. Which prop would you pass in to accomplish this?
-    $\rightarrow$ placeholder 
+    const [showMenu, setShowMenu] = useState(false);
+    
+    Which element in this code represents the state variable? 
+    $\rightarrow$ showMenu
+    \item In addition to the hooks that are built-in to React, you can also build your own hooks which will let you extract custom component logic into reusable functions
+    \item The biggest benefit of hooks overall is the readability and simplicity that they provide for your code.
 \end{itemize}
 
+\section{Video: Using the useColorScheme hook}
 \begin{itemize}
-    \item More props:
-    \begin{itemize}
-        \item \texttt{keyboardType}: "default","number pad", "decimal pad", "numeric", "email address", "phone pad", ...
-    \end{itemize}
+    \item Provides and subscribes to color scheme updates from the appearance module in React Native.
+    \item Pracical use: Apply styling changes in the app based on whether the user's device is set to light theme or dark theme.
+    \item Value: light, dark, null
+    \textbf{Practice Question:} You want to apply the \texttt{useColorScheme} hook to adjust your app’s color scheme based on the device's color theme setting. Which color theme options are available to you? Select all that apply.
+    $\rightarrow$ null, light, dark
 \end{itemize}
 
-\section{Video: Configure the TextInput Component}
-\begin{itemize}
-    \item \textbf{Practice Question:} You are adding a text input box to your app for the user to enter their email address. You will need to configure at least two separate \texttt{TextInput} components to do this – one for iOS devices, and another for Android devices. True or false?  
-    $\rightarrow$ False 
-\end{itemize}
-
-\section{Reading: TextInput Component and its Feature}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.2\textwidth]{images/ex4.png}
-    \caption{TextInput Component}
+    \includegraphics[width=0.2\textwidth]{images/light-theme.png}
+    \caption{UI with light theme}
 \end{figure}
 
-\section{Reading: Exercise: Create a TextInput Component}
+\section{Reading: Exploring the useColorScheme hook}
+This part is the same progress with above part.
+
+\section{Using useWindowDimensions hook}
+\begin{itemize}
+    \item This hook provides information about the window size.
+    \item From this information, we can determine how elements could appear on Windows of different sizes and make mor einformed decisions on how to adjust size scale.
+    \item Using:
+    \begin{lstlisting}[language=Java, numbers=none]
+        const {width, height, fontScale} = useWindowDimensions();
+    \end{lstlisting}
+    \textbf{Practice Question:} You're creating an app using React Native, and you need to make some design decisions. For what purpose would you use the \texttt{useWindowDimensions} hook? Check all that apply.
+    $\rightarrow$ to determine the window height, width, font scale.
+\end{itemize}
+
+\section{Reading: Explore the useWindowDimensions hook}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.2\textwidth]{images/Ex4 (2).png}
-    \caption{Exercise: Create a TextInput Component}
+    \includegraphics[width=0.2\textwidth]{images/windowDimension.png}
+    \caption{The window dimension of my virtual phone}
 \end{figure}
 
-\section{Practice Assignment: Self review: Create a TextInput Component}
+\section{Video: Using other community hooks}
+\begin{itemize}
+    \item React Native is an open source, meaning that the developer community can contribute new hooks and extend React Native.
+    \item To access, first we need to access the web page at Github.com/react-native-community/hooks.
+    \item Installation:
+    \begin{lstlisting}[numbers=none]
+        npm install @react-native-community/hooks
+    \end{lstlisting}
+    \textbf{Practice Question:} You have a React Native app that utilizes location tracking, but you would like this feature to be disabled when a user pushes the app to the background. Which community hook could you use to set up this functionality? 
+    $\rightarrow$ useAppState
+\end{itemize}
+
+\section{Reading: Exploring other community hooks}
+\subsection{useDeviceOrientation Hook}
+\begin{itemize}
+    \item This hook can determine if the user’s mobile device is viewed in landscape or portrait mode. 
+    \item You can utilize this hook to determine the orientation if your app needs to support both modes.
+    \begin{lstlisting}[language=Java, numbers=none]
+        import { useDeviceOrientation } from '@react-native-community/hooks' 
+
+        const orientation = useDeviceOrientation() 
+        
+        console.log(orientation.portrait) // Boolean
+        console.log(orientation.landscape) // Boolean
+    \end{lstlisting}
+\end{itemize}
+
+\subsection{useAppState Hook}
+\begin{itemize}
+    \item This hook is used to determine the current app state. 
+    \item It can be active, background or inactive (iOS only). 
+\end{itemize}
+
+\subsection{useClipboard Hook}
+\begin{itemize}
+    \item Store text from the clipboard within the app.
+    \item Using:
+    \begin{lstlisting}[language=Java, numbers=none]
+        import { useClipboard } from '@react-native-community/hooks' 
+
+        const [data, setString] = useClipboard() 
+
+        <Text>{data}</Text> 
+
+        <Button title='Update Clipboard' onPress={() => setString('new clipboard data')}>Set Clipboard</Button> 
+    \end{lstlisting}
+\end{itemize}
+
+\section{Reading: Exercise: Hooks in React Native}
+This part is to implement the light/dark mode that I have done in the section 3.2
+
+\section{Practice Assignment: Self review: Hooks in React Native}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/sr-3.png}
-    \caption{Self review: Create a TextInput Component}
+    \caption{Self review: Hooks in React Native}
 \end{figure}
 
-\section{Video: Virtual Keyboard on Mobiles App}
-\subsection{Problem about keyboard}
-\begin{itemize}
-    \item Open the virtual keyboard in an emulator:
-    \item Ctrl/Cmd + Shift + K
-    \item When the keyboard opens, it may cover important parts of your app. 
-\end{itemize}
-
-\subsection{React Native Props}
-\begin{itemize}
-    \item \texttt{keyboardDismissMode} property
-    \begin{itemize}
-        \item The keyboard will be dismissed when user scrolls the view.
-        \begin{lstlisting}[language=Java, numbers=none]
-            <ScrollView keyboardDismissMode='on-drag'/>
-        \end{lstlisting}
-        \item Set to none if you want the keyboard to stay open even when the user scrolls the view.
-    \end{itemize}
-
-    \item \texttt{KeyboardAvoidingView} component
-    \begin{itemize}
-        \item Automatically adjust its height, position, or padding to avoid conflict with other views.
-        \item Push the view on the top of the keyboard when it appears.
-        \item This component inherit all the props of the View component.
-        \begin{lstlisting}[language=Java, numbers=none]
-            <KeyboardAvoidingView
-                behavior={Platform.OS === 'ios' ? 'padding' : 'position'}
-            >
-                <TextInput
-                    style={styles.input}
-                    onChangeText={onChangeFirstName}
-                    placeholder='First name'
-                    value={firstName}
-                />
-            </KeyboardAvoidingView>
-        \end{lstlisting}
-    \end{itemize}
-
-    \item \textbf{Practice Question:} Your app has text input boxes that open the virtual keyboard when tapped. For the \texttt{keyboardDismissMode} property of the \texttt{ScrollView}, you’ve set the value to \texttt{on-drag}. What does this do?   
-    $\rightarrow$ The virtual keyboard will be dismissed when the user scrolls.   
-\end{itemize}
-
-\section{Reading: Tips and Tricks to handle virtual keyboard}
-This part is the same as in the previous section about virtual keyboard.
-
-\section{Video: Handling the Virtual Keyboard}
-\begin{itemize}
-    \item \textbf{Practice Question:} In your mobile app, you want to set the virtual keyboard to be dismissed as soon as the user scrolls. Which value of \texttt{keyboardDismissMode} would you assign to set this behavior?   
-    $\rightarrow$ on-drag
-\end{itemize}
-
-\section{Practice Assignment: Knowledge Check: Accept user input}
+\section{Practice Assignment: Knowledge Check: Hooks in React Native}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/kc-3.png}
-    \caption{Knowledge Check: Accept user input}
+    \caption{Knowledge Check: Hooks in React Native}
+\end{figure}
+
+\section{Module summary: Pressable, Images and Hooks in React Native}
+\begin{itemize}
+    \item Pressable components
+    \begin{itemize}
+        \item Explain Pressable component
+        \item Identify Pressable methods
+        \item Explain how to represent a Pressable component
+        \item Create Pressable that responds to press
+        \item Track Pressable state
+    \end{itemize}
+    \item Images components
+    \begin{itemize}
+        \item Explain Image component
+        \item Identify images sources
+        \item Identify supported Image types
+        \item Create Image component
+        \item Style an Image
+    \end{itemize}
+    \item Hooks in React Native
+    \begin{itemize}
+        \item Describe uses for hooks
+        \item Describe hook structure
+        \item useColorScheme hook
+        \item useWindowDimensions hook
+        \item Community hooks
+    \end{itemize}
+\end{itemize}
+
+\section{Practice Assignment: Module quiz: Pressable, Images and Hooks in React Native}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{images/module-quiz.png}
+    \caption{Module quiz: Pressable, Images and Hooks in React Native}
 \end{figure}
