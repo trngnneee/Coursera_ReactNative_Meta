@@ -9,14 +9,14 @@ import FeedbackForm from './components/FeedbackForm';
 export default function App() {
   return (
     <>
-      {/* <View style={styles.container}>
+      <View style={styles.container}>
         <LittleLemonHeader />
         <MenuItems />
       </View>
       <View style={styles.footerContainer}>
         <LittleLemonFooter />
-      </View> */}
-      <FeedbackForm />
+      </View>
+      {/* <FeedbackForm /> */}
     </>
   );
 }

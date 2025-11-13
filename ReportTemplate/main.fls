@@ -553,64 +553,43 @@ OUTPUT main.lof
 INPUT .\4.chapter_01.tex
 INPUT .\4.chapter_01.tex
 INPUT 4.chapter_01.tex
-INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
-INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\tex\latex\listings\lstlang1.sty
-INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt12.tfm
-INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmtt10.tfm
-INPUT .\images\ex1.png
-INPUT .\images\ex1.png
-INPUT .\images\ex1.png
-INPUT .\images\ex1.png
-INPUT .\images\ex1.png
-INPUT .\images\ex1.png
-INPUT .\images\ex1.png
-INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tctt1095.tfm
-INPUT .\images\ex2.png
-INPUT .\images\ex2.png
-INPUT .\images\ex2.png
-INPUT .\images\ex2.png
-INPUT .\images\ex2.png
-INPUT .\images\ex2.png
-INPUT .\images\ex2.png
-INPUT .\images\ex3.png
-INPUT .\images\ex3.png
-INPUT .\images\ex3.png
-INPUT .\images\ex3.png
-INPUT .\images\ex3.png
-INPUT .\images\ex3.png
-INPUT .\images\ex3.png
-INPUT .\images\sr1.png
-INPUT .\images\sr1.png
-INPUT .\images\sr1.png
-INPUT .\images\sr1.png
-INPUT .\images\sr1.png
-INPUT .\images\sr1.png
-INPUT .\images\sr1.png
-INPUT .\images\kc1.png
-INPUT .\images\kc1.png
-INPUT .\images\kc1.png
-INPUT .\images\kc1.png
-INPUT .\images\kc1.png
-INPUT .\images\kc1.png
-INPUT .\images\kc1.png
+INPUT .\images\ex1 (1).png
+INPUT .\images\ex1 (1).png
+INPUT .\images\ex1 (1).png
+INPUT .\images\ex1 (1).png
+INPUT .\images\ex1 (1).png
+INPUT .\images\ex1 (1).png
+INPUT .\images\ex1 (1).png
+INPUT .\images\ex1 (2).png
+INPUT .\images\ex1 (2).png
+INPUT .\images\ex1 (2).png
+INPUT .\images\ex1 (2).png
+INPUT .\images\ex1 (2).png
+INPUT .\images\ex1 (2).png
+INPUT .\images\ex1 (2).png
+INPUT .\images\ex1 (3).png
+INPUT .\images\ex1 (3).png
+INPUT .\images\ex1 (3).png
+INPUT .\images\ex1 (3).png
+INPUT .\images\ex1 (3).png
+INPUT .\images\ex1 (3).png
+INPUT .\images\ex1 (3).png
+INPUT .\5.chapter_02.tex
+INPUT .\5.chapter_02.tex
+INPUT 5.chapter_02.tex
+INPUT .\images\ga.png
+INPUT .\images\ga.png
+INPUT .\images\ga.png
+INPUT .\images\ga.png
+INPUT .\images\ga.png
+INPUT .\images\ga.png
+INPUT .\images\ga.png
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
 INPUT main.run.xml
 OUTPUT main.run.xml
-INPUT C:\Users\ASUS\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tctt1095.pk
-INPUT C:\Users\ASUS\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tctt1095.pk
-INPUT C:\Users\ASUS\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
-INPUT C:\Users\ASUS\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
-INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
-INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
-INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
-INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
-INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb
-INPUT C:\Users\ASUS\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt10.pfb

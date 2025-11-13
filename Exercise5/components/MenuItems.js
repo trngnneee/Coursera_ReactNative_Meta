@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { View, Text, StyleSheet, FlatList, SectionList } from 'react-native';
+import { View, Text, StyleSheet, FlatList, SectionList, Pressable } from 'react-native';
 
 const menuItemsToDisplay = [
   {
@@ -57,13 +57,25 @@ const MenuItems = () => {
   const renderItem = ({ item }) => <Item item={item} />;
   const renderSectionHeader = ({ section }) => <Text style={menuStyles.sectionHeader}>{section.title}</Text>
 
+  const [showMenu, setShowMenu] = useState();
+
   return (
     <View style={menuStyles.container}>
-      <SectionList
-        sections={menuItemsToDisplay}
-        renderItem={renderItem}
-        renderSectionHeader={renderSectionHeader}
-      />
+      <Pressable
+        style={menuStyles.button}
+        onPress={() => {
+          setShowMenu(!showMenu);
+        }}
+      >
+        <Text style={menuStyles.buttonText}>{showMenu ? 'Home' : 'View Menu'}</Text>
+      </Pressable>
+      {showMenu && (
+        <SectionList
+          sections={menuItemsToDisplay}
+          renderItem={renderItem}
+          renderSectionHeader={renderSectionHeader}
+        />
+      )}
     </View>
   );
 };
@@ -87,6 +99,20 @@ const menuStyles = StyleSheet.create({
     fontSize: 30,
     text: 'black',
     textAlign: 'center'
+  },
+  button: {
+    paddingVertical: 20,
+    justifyContent: 'center'
+  },
+  buttonText: {
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'white',
+    backgroundColor: 'gray',
+    marginHorizontal: 40,
+    paddingVertical: 10,
+    borderRadius: 10
   }
 });
 

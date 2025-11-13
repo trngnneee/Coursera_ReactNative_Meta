@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { ScrollView, Text, StyleSheet, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
+import { ScrollView, Text, StyleSheet, TextInput, KeyboardAvoidingView, Platform, Image, View } from 'react-native';
 
 export default function WelcomeScreen() {
   const [firstName, setFirstName] = React.useState('');
   const [lastName, setLastName] = React.useState('');
   const [phone, setPhone] = React.useState('');
   const [message, setMessage] = React.useState('');
-  
+
   return (
     <KeyboardAvoidingView
       styl={styles.container}
@@ -14,6 +14,16 @@ export default function WelcomeScreen() {
     >
       <ScrollView indicatorStyle="white" keyboardDismissMode='on-drag'>
         <Text style={styles.headerText}>Welcome to Little Lemon</Text>
+        <View style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}>
+          <Image
+            source={require('./../img/logo.png')}
+            style={styles.logo}
+          />
+        </View>
         <Text style={styles.regularText}>
           Little Lemon is a charming neighborhood bistro that serves simple food
           and classic cocktails in a lively but casual environment. We would love
@@ -47,6 +57,17 @@ export default function WelcomeScreen() {
           multiline={true}
           maxLength={250}
         />
+        <View style={{
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+          marginVertical: 20
+        }}>
+          <Image
+            source={require("./../img/img1.png")}
+            style={styles.img}
+          />
+        </View>
       </ScrollView>
     </KeyboardAvoidingView>
   );
@@ -83,5 +104,15 @@ const styles = StyleSheet.create({
     padding: 5,
     borderRadius: 10,
     height: 100
+  },
+  logo: {
+    height: 100,
+    width: 300,
+    resizeMode: 'contain',
+  },
+  img: {
+    height: 300,
+    width: 300,
+    resizeMode: 'center',
   }
 });

@@ -1,151 +1,83 @@
-\chapter{Hooks}
+\chapter{Tab Navigation}
 
-\section{Video: What are Hooks?}
+\section{Video: What is Tab Navigation}
 \begin{itemize}
-    \item useState hook is used to manage the state within a component and to keep track of this.
-    \item \textbf{Practice Question:} Observe the following line of code which sets up the useState hook:  
-    
-    const [showMenu, setShowMenu] = useState(false);
-    
-    Which element in this code represents the state variable? 
-    $\rightarrow$ showMenu
-    \item In addition to the hooks that are built-in to React, you can also build your own hooks which will let you extract custom component logic into reusable functions
-    \item The biggest benefit of hooks overall is the readability and simplicity that they provide for your code.
+    \item Its a React Navigation library for setting up tab-based navigation between screens.
 \end{itemize}
 
-\section{Video: Using the useColorScheme hook}
+
+\subsection{Stack Navigation vs Tab Navigation}
 \begin{itemize}
-    \item Provides and subscribes to color scheme updates from the appearance module in React Native.
-    \item Pracical use: Apply styling changes in the app based on whether the user's device is set to light theme or dark theme.
-    \item Value: light, dark, null
-    \textbf{Practice Question:} You want to apply the \texttt{useColorScheme} hook to adjust your app’s color scheme based on the device's color theme setting. Which color theme options are available to you? Select all that apply.
-    $\rightarrow$ null, light, dark
+    \item Stack navigation can transition between screens and navigation history.
+    \item With Tab navigation, you can contain tabs on the bottom of the screen or on the header. Clicking on a tab takes you a specific screen. $\rightarrow$ common design on modern mobile app.
 \end{itemize}
 
+\subsection{Options}
+\begin{itemize}
+    \item Bottom tab navigation
+    \item Material design-based bottom tab navigation
+    \item Material design-based top tab navigation
+    \item Within the tab navigator screen options such as icons, active and inactive tint colors are readily available.
+\end{itemize}
+
+\textbf{Practice Question:} You would like to create a tab navigator in your React Native app. Which of the following are possible options? Select all that apply.
+\begin{itemize}
+    \item Material-design bottom tab navigation  
+    \item Material-design top tab navigation  
+    \item Bottom tab navigation
+\end{itemize}
+
+\section{Video: Tab Navigation Example}
+\textbf{Practice Question:} You would like to add a Bottom Tab Navigator to your React Native. This is included with the NavigationContainer  , so once you’ve imported that then you are ready to go. True or false?  $\rightarrow$ False
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.2\textwidth]{images/light-theme.png}
-    \caption{UI with light theme}
+    \includegraphics[width=0.2\textwidth]{images/ex8 (1).png}
+    \caption{Welcome Screen with Tab Navigation}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{images/ex8 (2).png}
+    \caption{Login Screen with Tab Navigation}
 \end{figure}
 
-\section{Reading: Exploring the useColorScheme hook}
-This part is the same progress with above part.
-
-\section{Using useWindowDimensions hook}
-\begin{itemize}
-    \item This hook provides information about the window size.
-    \item From this information, we can determine how elements could appear on Windows of different sizes and make mor einformed decisions on how to adjust size scale.
-    \item Using:
-    \begin{lstlisting}[language=Java, numbers=none]
-        const {width, height, fontScale} = useWindowDimensions();
-    \end{lstlisting}
-    \textbf{Practice Question:} You're creating an app using React Native, and you need to make some design decisions. For what purpose would you use the \texttt{useWindowDimensions} hook? Check all that apply.
-    $\rightarrow$ to determine the window height, width, font scale.
-\end{itemize}
-
-\section{Reading: Explore the useWindowDimensions hook}
+\section{Video: Customizing your tab navigator}
+\textbf{Practice Question:} You would like to customize the tab icons in your Tab Navigator. However, only one icon can be assigned to a tab. True or false?  $\rightarrow$ False
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.2\textwidth]{images/windowDimension.png}
-    \caption{The window dimension of my virtual phone}
+    \includegraphics[width=0.2\textwidth]{images/ex9 (1).png}
+    \caption{Welcome Screen with customize Tab Navigation}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{images/ex9 (2).png}
+    \caption{Login Screen with customize Tab Navigation}
 \end{figure}
 
-\section{Video: Using other community hooks}
-\begin{itemize}
-    \item React Native is an open source, meaning that the developer community can contribute new hooks and extend React Native.
-    \item To access, first we need to access the web page at Github.com/react-native-community/hooks.
-    \item Installation:
-    \begin{lstlisting}[numbers=none]
-        npm install @react-native-community/hooks
-    \end{lstlisting}
-    \textbf{Practice Question:} You have a React Native app that utilizes location tracking, but you would like this feature to be disabled when a user pushes the app to the background. Which community hook could you use to set up this functionality? 
-    $\rightarrow$ useAppState
-\end{itemize}
+\section{Reading: Exploring Tab Navigation}
+This part is the same progress that I have made in the above section, from configuring Tab Navigation to customizing it.
 
-\section{Reading: Exploring other community hooks}
-\subsection{useDeviceOrientation Hook}
-\begin{itemize}
-    \item This hook can determine if the user’s mobile device is viewed in landscape or portrait mode. 
-    \item You can utilize this hook to determine the orientation if your app needs to support both modes.
-    \begin{lstlisting}[language=Java, numbers=none]
-        import { useDeviceOrientation } from '@react-native-community/hooks' 
-
-        const orientation = useDeviceOrientation() 
-        
-        console.log(orientation.portrait) // Boolean
-        console.log(orientation.landscape) // Boolean
-    \end{lstlisting}
-\end{itemize}
-
-\subsection{useAppState Hook}
-\begin{itemize}
-    \item This hook is used to determine the current app state. 
-    \item It can be active, background or inactive (iOS only). 
-\end{itemize}
-
-\subsection{useClipboard Hook}
-\begin{itemize}
-    \item Store text from the clipboard within the app.
-    \item Using:
-    \begin{lstlisting}[language=Java, numbers=none]
-        import { useClipboard } from '@react-native-community/hooks' 
-
-        const [data, setString] = useClipboard() 
-
-        <Text>{data}</Text> 
-
-        <Button title='Update Clipboard' onPress={() => setString('new clipboard data')}>Set Clipboard</Button> 
-    \end{lstlisting}
-\end{itemize}
-
-\section{Reading: Exercise: Hooks in React Native}
-This part is to implement the light/dark mode that I have done in the section 3.2
-
-\section{Practice Assignment: Self review: Hooks in React Native}
+\section{Reading: Exercise: Configure Tab Navigation}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/sr-3.png}
-    \caption{Self review: Hooks in React Native}
+    \includegraphics[width=0.2\textwidth]{images/ex9 (1).png}
+    \caption{Exercise: Configure Tab Navigation - Welcome Screen}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{images/ex9 (2).png}
+    \caption{Exercise: Configure Tab Navigation - Login Screen}
 \end{figure}
 
-\section{Practice Assignment: Knowledge Check: Hooks in React Native}
+\section{Practice Assignment: Self review: Configure Tab Navigation}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/kc-3.png}
-    \caption{Knowledge Check: Hooks in React Native}
+    \includegraphics[width=0.5\textwidth]{images/sr3.png}
+    \caption{Self review: Configure Tab Navigation}
 \end{figure}
 
-\section{Module summary: Pressable, Images and Hooks in React Native}
-\begin{itemize}
-    \item Pressable components
-    \begin{itemize}
-        \item Explain Pressable component
-        \item Identify Pressable methods
-        \item Explain how to represent a Pressable component
-        \item Create Pressable that responds to press
-        \item Track Pressable state
-    \end{itemize}
-    \item Images components
-    \begin{itemize}
-        \item Explain Image component
-        \item Identify images sources
-        \item Identify supported Image types
-        \item Create Image component
-        \item Style an Image
-    \end{itemize}
-    \item Hooks in React Native
-    \begin{itemize}
-        \item Describe uses for hooks
-        \item Describe hook structure
-        \item useColorScheme hook
-        \item useWindowDimensions hook
-        \item Community hooks
-    \end{itemize}
-\end{itemize}
-
-\section{Practice Assignment: Module quiz: Pressable, Images and Hooks in React Native}
+\section{Practice Assignment: Knowledge Check: Tab Navigation}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/module-quiz.png}
-    \caption{Module quiz: Pressable, Images and Hooks in React Native}
+    \includegraphics[width=0.5\textwidth]{images/kc3.png}
+    \caption{Knowledge Check: Tab Navigation}
 \end{figure}

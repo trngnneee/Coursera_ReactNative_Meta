@@ -1,177 +1,142 @@
-\chapter{Working with TextInput components}
+\chapter{Drawer Navigation}
 
-\section{Reading: Common props of TextInput component}
-\subsection{placeholder}
+\section{Video: What is Drawer Navigation}
+\subsection{Drawer Navigation}
 \begin{itemize}
-    \item The placeholder string displayed before the user enters anything into the text input box.
-    \item Syntax:
-    \begin{lstlisting}[language=Java, numbers=none]
-        <TextInput 
-            style={styles.input} 
-            value={firstName} 
-            onChangeText={onChangeFirstName} 
-            placeholder={'First Name'} 
-        /> 
-    \end{lstlisting}
+    \item The drawer appears when the user touches the hamburger icon in the app bar or when the user swipes a finger from the edge og the screen.
+    \item Drawer navigation is, like Tab navigation, a common navigation pattern. It uses a drawer from left to right side for navigating between screens. 
+    \item You would use this pattern typically when there are many screens to navigate to. 
 \end{itemize}
 
-\subsection{multiline}
+\subsection{Syntax}
+Import
+\begin{lstlisting}[language=Java, numbers=none]
+    import { createDrawerNavigator } from '@react-navigation/drawer'
+
+    const Drawer = createDrawerNavigator();
+\end{lstlisting}
+
+Use in App
+\begin{lstlisting}[language=Java, numbers=none]
+    <Drawer.Navigator>
+        <Drawer.Screen name='...' component={...} />
+    </Drawer.Navigator>
+\end{lstlisting}
+
 \begin{itemize}
-    \item Boolean. When set to true, the text input can be muliple lines.
-    \item By default, it is set to false, all the text that cannot fit within a single line is truncated and not visible to user.
-    \item Syntax:
-    \begin{lstlisting}[language=Java, numbers=none]
-        <TextInput 
-            style={styles.messageInput} 
-            value={message} 
-            onChangeText={onChangeMessage} 
-            placeholder={'Please leave feedback'} 
-            multiline={true} 
-        />
-    \end{lstlisting}
+    \item We can add option to open the drawer on the right of the screen.
+    \item We can also add multiple choices for the drawer, for example the navigation in the left drawer, and the contact in the right drawer,...
 \end{itemize}
 
-\subsection{maxLength}
+\textbf{Practice Question:} Which of the following statements are correct with regards to drawer navigation? Select all that apply.
 \begin{itemize}
-    \item This props limits the maximum number of characters that can be entered.
-    \item This props accepts a number as the value.
-    \item Syntax:
-    \begin{lstlisting}[language=Java, numbers=none]
-        <TextInput 
-            style={styles.messageInput} 
-            value={message} 
-            onChangeText={onChangeMessage} 
-            placeholder={'Please leave feedback'} 
-            multiline={true} 
-            maxLength={250}
-        />
-    \end{lstlisting}
+    \item You can either swipe to open the drawer or simply click on the hamburger menu on both Android and iOS platforms.
+    \item You can customize your app to support multiple drawers; one on the right and one on the left.  
+    \item By default you swipe to your right, and the drawer opens on the left.
+    \item You can also customize the drawer position so that the drawer opens on the right with a left swipe. 
 \end{itemize}
 
-\subsection{keyboardType}
-\begin{itemize}
-    \item React Native's support keyboard.
-    \item number-pad, decimal-pad, numeric, email-address, phone-pad, url, ...
-    \item Syntax:
-    \begin{lstlisting}[language=Java, numbers=none]
-        <TextInput 
-            style={styles.input} 
-            value={phoneNumber} 
-            onChangeText={onChangePhoneNumber} 
-            placeholder={'Phone Number'} 
-            keyboardType={'phone-pad'} 
-        />
-    \end{lstlisting} 
-\end{itemize}
-
-\section{Video: Passing props to TextInput Component}
-\begin{itemize}
-    \item Use \texttt{secureTextEntry={true}} to hide the input text from user (Use for password).
-    \item \textbf{Practice Question:} You would like to create a text input box in your app for users to enter their password. To make this more secure, you would like for the characters entered in the box to be hidden and for the box to have a limit of 14 characters. Which \texttt{TextInput} props would you pass in to accomplish this? Choose all that apply.   
-    $\rightarrow$ secureTextEntry, maxLength
-\end{itemize}
-
+\section{Video: Drawer Navigation Example}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.2\textwidth]{images/passing-props.png}
-    \caption{Passing props to TextInput Component}
+    \includegraphics[width=0.2\textwidth]{images/ex10 (1).png}
+    \caption{Drawer with Home and Login Screen}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.2\textwidth]{images/ex10 (2).png}
+    \caption{Drawer with Home and Login Screen}
 \end{figure}
 
-\section{Reading: Exercise: Create a login page}
+\textbf{Practice Question:} You’d like to set a Drawer Navigator for your app. From which directions on the screen can you set a drawer to open? Select all that apply 
+\begin{itemize}
+    \item Left
+    \item Right
+\end{itemize}
+
+\section{Reading: Exploring Drawer Navigation}
+This part is the same progress of installing and using Drawer as the above part.
+
+\section{Reading: Exercise: Configure Drawer Navigation}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.2\textwidth]{images/Ex5.png}
-    \caption{Exercise: Create a login page}
+    \begin{minipage}[t]{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/ex11 (2).png}
+        \caption*{(a) Home Screen}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/ex11 (3).png}
+        \caption*{(b) Drawer}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.2\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{images/ex11 (1).png}
+        \caption*{(c) Login Screen}
+    \end{minipage}
+    \caption{Drawer with Home and Login Screens}
 \end{figure}
 
-\section{Practice Assignment: Self review: Create a login page}
+\section{Practice Assignment: Self review: Configure Drawer Navigation}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/sr-4.png}
-    \caption{Self review: Create a login page}
+    \includegraphics[width=0.5\textwidth]{images/sr4.png}
+    \caption{Self review: Configure Drawer Navigation}
 \end{figure}
 
-\section{Video: Using TextInput Methods}
-\subsection{onFocus}
-\begin{itemize}
-    \item This is a callback medthod that is called when the text input is focused.
-    \item $onFocus(() => \{ \})$
-\end{itemize}
-
-\subsection{onBlur}
-\begin{itemize}
-    \item This is also a callback method, called when the text input it remove from being focused.
-    \item $onBlur(() => \{ \})$
-\end{itemize}
-
-\section{clearButtonMode}
-\begin{itemize}
-    \item A clear button will appear on the right side of the text box.
-    \item This button allow to clear all the input text.
-    \item Only support for iOS.
-    \item Dont work if we have \texttt{multiline} props.
-    \item clearButtonMode='always'. The default is 'never'
-    \item \textbf{Practice Question:} You are creating a form for your app and would like it to display an alert whenever a user exits a certain text input box. Which prop of the \texttt{TextInput} component would you use to achieve this? 
-    $\rightarrow$ onBlur
-\end{itemize}
-
-\section{Reading: TextInput Methods}
-This part is the same content with above part which I have taken note clearly.
-
-\section{Practice Assignment: Knowledge Check: Props and methods in TextInput}
+\section{Practice Assignment: Knowledge check: Drawer Navigation}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/kc-4.png}
-    \caption{Knowledge Check: Props and methods in TextInput}
+    \includegraphics[width=0.5\textwidth]{images/kc4.png}
+    \caption{Knowledge check: Drawer Navigation}
 \end{figure}
 
-\section{Video: Module summary: Lists and Text Input in React Native}
+\section{Video: Module Summary: React Navigation}
 \begin{itemize}
-    \item FlatList component
+    \item Introduction to React Navigation
     \begin{itemize}
-        \item Lazy rendering
-        \item FlatList syntax
-        \item Render large lists
+        \item What is React Navigation
+        \item Transition between screens
+        \item Benefits and Trade off
+        \item Install and setup React Navigation
+        \item Create and configure the Stack Navigator
+        \item Build Stack Navigator
+        \item Pass props to screen
+        \item Setup routes
     \end{itemize}
 
-    \item FlatList methods
+    \item Moving between screens
     \begin{itemize}
-        \item keyExtractor
-        \item ItemSeperatorComponent
-        \item ListHeaderComponent
-        \item ListFooterComponent
+        \item navigate
+        \item push
+        \item goBack
+        \item popToTop
+        \item Move between screens in a stack
+        \item Go back to previous screen 
+        \item Configure a header bar
+    \end{itemize} 
+
+    \item Tab Navigation
+    \begin{itemize}
+        \item What is Tab Navigation
+        \item Apply and configure a Tab navigator
+        \item Create code for tab navigation 
+        \item Customize your tab navigator
     \end{itemize}
 
-    \item SectionList component
+    \item Drawer Navigation
     \begin{itemize}
-        \item Differences from FlatList
-        \item SectionList syntax
-        \item Render large list with sections
-    \end{itemize}
-
-    \item TextInput component
-    \begin{itemize}
-        \item Create text input boxes
-        \item Configure TextInput
-        \item Create TextInput components in ScrollView
-    \end{itemize}
-
-    \item Keyboard Handling
-    \begin{itemize}
-        \item keyboardDismissMode
-        \item KeyboardAvoidingView
-    \end{itemize}
-
-    \item TextInput props
-    \begin{itemize}
-        \item Enable additional TextInput functionalities
-        \item Set responses to actions in text box
+        \item What is Drawer navigation
+        \item Apply and configure a Drawer navigator
     \end{itemize}
 \end{itemize}
 
-\section{Graded Assignment: Module quiz: Lists and Text Input in React Native}
+\section{Graded Assignment: Module Quiz: React Navigation}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/module-quiz.png}
-    \caption{Module quiz: Lists and Text Input in React Native}
+    \includegraphics[width=0.5\textwidth]{images/mq.png}
+    \caption{Module Quiz: React Navigation}
 \end{figure}
